@@ -1,5 +1,4 @@
 <?php if (!defined('THINK_PATH')) exit();?>
-
   <!DOCTYPE html>
 <html>
 
@@ -7,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>后台管理~</title>
+    <title>里程密-会员回收站</title>
     <link href="/AncientTree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
     <link href="/AncientTree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="/AncientTree/Public/Default/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
@@ -35,7 +34,7 @@
     <div id="wrapper">
 
         <!-- start left -->
-               
+
       <nav class="navbar-default navbar-static-side" role="navigation" id = "navs">
             <div class="sidebar-collapse">
                 <ul class="nav" id="side-menu">
@@ -157,101 +156,77 @@
                     </nav>
                 </div>
 
-         <!-- end left -->
-        <div class="row">
-        <center><h1>程序信息</h1></center>
-        <div class="col-lg-2">
-                    <div class="widget navy-bg p-lg text-center">
-                        <div class="m-b-md">
-                            <i class="fa fa-shield fa-4x"></i>
-                            <h1 class="m-xs">Power</h1>
-                            <h3 class="font-bold no-margins">
-                                作者
-                            </h3>
-                            <small>信息</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                        <div class="widget-head-color-box navy-bg p-lg text-center">
-                            <div class="m-b-md">
-                            <h2 class="font-bold no-margins">
-                                MonkeyCode
-                            </h2>
-                                <small>一个苦逼的码农</small>
-                            </div>
-                            <img src="/AncientTree/Public/Uploads/default.png" class="img-circle circle-border m-b-md" alt="profile" width="128px;">
-                            <div>
-                                <span>我不惧怕敌人是因为我有队友</span> |
-                            </div>
-                        </div>
-                        <div class="widget-text-box">
-                            <h4 class="media-heading">他说</h4>
-                            <p>爱上网，爱装逼，但是不搞基. <br>欢迎使用里程密开源博客系统，希望我们一起把里程密做的更好</p>
-                        </div>
+        <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>会员回收站</h2>
                 </div>
                 <div class="col-lg-2">
-                    <div class="widget lazur-bg p-lg text-center">
-                        <div class="m-b-md">
-                            <i class="fa fa-warning fa-4x"></i>
-                            <h1 class="m-xs">Blog</h1>
-                            <h3 class="font-bold no-margins">
-                                程序
-                            </h3>
-                            <small>信息</small>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>爱我所选，选我所爱，爱里程密，爱生活！</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#">Config option 1</a>
+                                </li>
+                                <li><a href="#">Config option 2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
                         </div>
                     </div>
-                    </div>
-                <div class="col-lg-4">
-                    <div class="widget lazur-bg p-xl">
-                                <h2>
-                                    里程密开源博客系统
-                                </h2>
-                        <ul class="list-unstyled m-t-md">
-                            <li>
-                                <label>官网网址：</label>
-                                <a href="<?php echo ($version["gfurl"]); ?>"><?php echo ($version["gfurl"]); ?></a>
-                            </li>
-                            <li>
-                                <label>Github项目地址：</label>
-                                <a href="https://github.com/lcm1475/lichengmi">https://github.com/lcm1475/lichengmi</a>
-                            </li>
-                            <li>
-                                <label>交流群群号：</label>
-                                    <?php echo ($version["qun"]); ?>
-                            </li>
-                            <li>
-                                <label>当前系统版本：</label>
-                                <?php echo ($version["now_version"]); ?>
-                            </li>
-                            <?php if($version["version"] == 999): ?><li>
-                                <label>最新系统版本：</label>
-                                V<?php echo ($version["version"]); ?>  <br>
-                                恭喜您，当前是最新版本
-                            </li>
-                            <?php else: ?>
-                            <li>
-                                <label>更新日期：</label>
-                                <?php echo ($version["gxctime"]); ?>
-                            </li>
-                            <li>
-                                <label>最新系统版本：</label>
-                                <span style = "color:red;"><b>V<?php echo ($version["version"]); ?></b></span><br>
-                                <a href="<?php echo ($version["gxurl"]); ?>" target="_blank"><button type="button" class="btn btn-w-m btn-warning" style="background: #CC9966;border-color: #CC9966;">点击查看详情</button></a>
-                                <a href="<?php echo U('OnlineUpdate/update_start');?>" target="_blank" onclick="return shifou()"><button type="button" class="btn btn-w-m btn-warning" style="background: #CC0033;border-color: #CC0033;">点击进行更新</button></a>
-                            </li>
-                            <br>
-                            <li>
-                                <label>更新细节：</label>
-                               <?php echo ($version["content"]); ?>
-                            </li><?php endif; ?>
-                        </ul>
+                    <div class="ibox-content">
+
+                    <table class="table table-striped table-bordered table-hover dataTables-example" >
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>账号</th>
+                        <th>昵称</th>
+                        <th>注册时间</th>
+                        <th>上次登录时间</th>
+                        <th>上次登录IP</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php if(is_array($list)): foreach($list as $k=>$vo): ?><tr class="gradeU">
+                        <td><?php echo ($vo["id"]); ?></td>
+                        <td><?php echo ($vo["username"]); ?></td>
+                        <td><?php echo ($vo["truename"]); ?></td>
+                        <td><?php echo (date( "Y-m-d H:i:s",$vo["ctime"])); ?></td>
+                        <td><?php echo (date( "Y-m-d H:i:s",$vo["lasttime"])); ?></td>
+                        <td><?php echo ($vo["ip"]); ?></td>
+                        <td><?php if($vo["status"] == 1): ?><span class="label label-danger">禁用</span><?php else: ?><span class="label label-info">启用</span><?php endif; ?></td>
+                        <td>
+                           <a href="<?php echo U('User/xianshi',array('id'=>$vo['id']));?>" target="_blank"><button type="button" class="btn btn-w-m btn-warning">启用</button></a>
+                            <a href="<?php echo U('User/reallydelete',array('id'=>$vo['id']));?>" onclick = "return shifou();"><button type="button" class="btn btn-w-m btn-danger">删除</button></a>
+                        </td>
+                    </tr><?php endforeach; endif; ?>
+                    <?php echo ($page); ?>
+                    </tbody>
+
+                    </table>
 
                     </div>
                 </div>
+            </div>
+            </div>
 
-                </div>
-            <!-- start footer -->
+    <!-- start footer -->
                     
 <div class="footer">
     <div class="pull-right">
@@ -324,11 +299,4 @@
     <!-- Toastr -->
 
             <!-- end footer -->
-            </div>
         </div>
-
-        </div>
-
-    </div>
-</body>
-</html>

@@ -222,19 +222,6 @@
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-lg-12">
-            <style>
-                .button_link{display:inline-block;position:relative;text-decoration:none;font-size:15px;color:#33ab6a;font-weight:bold;width:100%;height:100%;border:2px solid rgba(225,255,255,.8);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-transition:0.4s;-o-transition:0.4s;transition:0.4s;}
-                .button_link:hover{border:2px solid rgba(255,255,255,1);}
-                .button_link .line{display:inline-block;background-color:#BABABA ;position:absolute;-webkit-transition:0.5s ease;-o-transition:0.5s ease;transition:0.5s ease;}
-                .button_link .line_top{height:2px;width:0;left:-50%;top:-2px;}
-                .button_link:hover .line_top{width:100%;left:-2px;}
-                .button_link .line_right{height:0;width:2px;top:-50%;right:-2px;}
-                .button_link:hover .line_right{height:100%;top:-2px;}
-                .button_link .line_bottom{width:2px;height:0;bottom:-50%;left:-2px;}
-                .button_link:hover .line_bottom{height:100%;bottom:-2px;}
-                .button_link .line_left{height:2px;width:0;right:-50%;bottom:-2px;}
-                .button_link:hover .line_left{width:100%;right:-2px;}
-            </style>
             <div class="row">
                 <div class="ibox">
                     <div class="ibox-content">
@@ -330,8 +317,6 @@
 
 
 <script type="text/javascript">
-    
-    
     $(document).ready(function(){
         reqUrl = "http://localhost/AncientTree/index.php?m=Home&c=GetData&a=init";
         $.get(reqUrl, function (res, status) {
@@ -340,5 +325,4 @@
             draw_chart('main', '摄氏度', obj, '温度');
         });
     });
-
 </script>

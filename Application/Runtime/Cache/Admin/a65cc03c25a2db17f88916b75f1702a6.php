@@ -159,97 +159,52 @@
 
          <!-- end left -->
         <div class="row">
-        <center><h1>程序信息</h1></center>
-        <div class="col-lg-2">
-                    <div class="widget navy-bg p-lg text-center">
-                        <div class="m-b-md">
-                            <i class="fa fa-shield fa-4x"></i>
-                            <h1 class="m-xs">Power</h1>
-                            <h3 class="font-bold no-margins">
-                                作者
-                            </h3>
-                            <small>信息</small>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-12">
+                <div class="wrapper wrapper-content">
+                <div class="row">
+                <center><h1>主题</h1></center>
                 <div class="col-lg-4">
-                        <div class="widget-head-color-box navy-bg p-lg text-center">
-                            <div class="m-b-md">
-                            <h2 class="font-bold no-margins">
-                                MonkeyCode
-                            </h2>
-                                <small>一个苦逼的码农</small>
-                            </div>
-                            <img src="/AncientTree/Public/Uploads/default.png" class="img-circle circle-border m-b-md" alt="profile" width="128px;">
-                            <div>
-                                <span>我不惧怕敌人是因为我有队友</span> |
+                        <div class="ibox-content text-center">
+                                <h1>默认主题</h1>
+                                <div class="m-b-sm">
+                                    <img alt="image" src="./Application/Home/View/Default/preview.jpg" width="100%;">
+                                </div>
+                                <p class="font-bold"><span class="label label-info">版本：2.2</span>
+                                    <span class="label label-success">作者：MonkeyCode</span></p>
+                                <div class="text-center">
+                                            <a href="http://default.lcm.wang/" target="_blank"><button type="button" class="btn btn-primary">演示</button></a>
+                                            <button type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-placement="bottom" data-content="这是里程密博客程序自带的默认主题">说明</button>
+                                             <button type="button" class="btn btn-w-m btn-warning" onclick="alert('此主题无设置方法')">设置</button>
+                                            <button type="button" class="btn btn-w-m btn-danger" disabled="">卸载</button>
+                                            <?php if($now_them == 'Default'): ?><button type="button" class="btn btn-w-m btn-default" style="width: 100%;margin-top: 10px;" disabled="">当前已启用</button>
+                                            <?php else: ?>
+                                                <a href="<?php echo U('Theme/change_them',array('them'=>'Default'));?>"><button type="button" class="btn btn-w-m btn-info" style="width: 100%;margin-top: 10px;">启用</button></a><?php endif; ?>
+
+                                </div>
                             </div>
                         </div>
-                        <div class="widget-text-box">
-                            <h4 class="media-heading">他说</h4>
-                            <p>爱上网，爱装逼，但是不搞基. <br>欢迎使用里程密开源博客系统，希望我们一起把里程密做的更好</p>
-                        </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="widget lazur-bg p-lg text-center">
-                        <div class="m-b-md">
-                            <i class="fa fa-warning fa-4x"></i>
-                            <h1 class="m-xs">Blog</h1>
-                            <h3 class="font-bold no-margins">
-                                程序
-                            </h3>
-                            <small>信息</small>
-                        </div>
-                    </div>
-                    </div>
-                <div class="col-lg-4">
-                    <div class="widget lazur-bg p-xl">
-                                <h2>
-                                    里程密开源博客系统
-                                </h2>
-                        <ul class="list-unstyled m-t-md">
-                            <li>
-                                <label>官网网址：</label>
-                                <a href="<?php echo ($version["gfurl"]); ?>"><?php echo ($version["gfurl"]); ?></a>
-                            </li>
-                            <li>
-                                <label>Github项目地址：</label>
-                                <a href="https://github.com/lcm1475/lichengmi">https://github.com/lcm1475/lichengmi</a>
-                            </li>
-                            <li>
-                                <label>交流群群号：</label>
-                                    <?php echo ($version["qun"]); ?>
-                            </li>
-                            <li>
-                                <label>当前系统版本：</label>
-                                <?php echo ($version["now_version"]); ?>
-                            </li>
-                            <?php if($version["version"] == 999): ?><li>
-                                <label>最新系统版本：</label>
-                                V<?php echo ($version["version"]); ?>  <br>
-                                恭喜您，当前是最新版本
-                            </li>
-                            <?php else: ?>
-                            <li>
-                                <label>更新日期：</label>
-                                <?php echo ($version["gxctime"]); ?>
-                            </li>
-                            <li>
-                                <label>最新系统版本：</label>
-                                <span style = "color:red;"><b>V<?php echo ($version["version"]); ?></b></span><br>
-                                <a href="<?php echo ($version["gxurl"]); ?>" target="_blank"><button type="button" class="btn btn-w-m btn-warning" style="background: #CC9966;border-color: #CC9966;">点击查看详情</button></a>
-                                <a href="<?php echo U('OnlineUpdate/update_start');?>" target="_blank" onclick="return shifou()"><button type="button" class="btn btn-w-m btn-warning" style="background: #CC0033;border-color: #CC0033;">点击进行更新</button></a>
-                            </li>
-                            <br>
-                            <li>
-                                <label>更新细节：</label>
-                               <?php echo ($version["content"]); ?>
-                            </li><?php endif; ?>
-                        </ul>
+                    <?php if(is_array($them_list)): foreach($them_list as $key=>$vo): ?><div class="col-lg-4">
+                        <div class="ibox-content text-center">
+                                <h1><?php echo ($vo["title"]); ?></h1>
+                                <div class="m-b-sm">
+                                    <img alt="image" src="<?php echo ($vo["root_dir"]); echo ($vo["preview_file"]); ?>" width="100%;">
+                                </div>
+                                <p class="font-bold"><span class="label label-info">版本：<?php echo ($vo["versions"]); ?></span>
+                                    <span class="label label-success">作者：<?php echo ($vo["author"]); ?></span></p>
+                                <div class="text-center">
+                                            <a href="<?php echo ($vo["demo_url"]); ?>" target="_blank"><button type="button" class="btn btn-primary">演示</button></a>
+                                            <button type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-placement="bottom" data-content="<?php echo ($vo["info_file"]); ?>">说明</button>
+                                             <a href="<?php echo ($vo["root_dir"]); echo ($vo["set_file"]); ?>" target="_blank"><button type="button" class="btn btn-w-m btn-warning">设置</button></a>
+                                            <a href="<?php echo U('Theme/del_them',array('dir_str'=>$vo['remove_file']));?>" onclick="return shifou()"><button type="button" class="btn btn-w-m btn-danger">卸载</button></a>
+                                            <?php if($now_them == $vo['dir_name']): ?><button type="button" class="btn btn-w-m btn-default" style="width: 100%;margin-top: 10px;" disabled="">当前已启用</button>
+                                            <?php else: ?>
+                                                <a href="<?php echo U('Theme/change_them',array('them'=>$vo['dir_name']));?>"><button type="button" class="btn btn-w-m btn-info" style="width: 100%;margin-top: 10px;">启用</button></a><?php endif; ?>
 
+                                </div>
+                            </div>
+                        </div><?php endforeach; endif; ?>
                     </div>
                 </div>
-
                 </div>
             <!-- start footer -->
                     

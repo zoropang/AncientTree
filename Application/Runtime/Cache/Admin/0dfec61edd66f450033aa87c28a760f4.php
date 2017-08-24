@@ -8,11 +8,11 @@
 
     <title>里程密-登陆</title>
 
-    <link href="/ancienttree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
 
-    <link href="/ancienttree/Public/Default/css/animate.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/css/style.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/animate.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/style.css" rel="stylesheet">
 <style type="text/css">
       #bg {
         position:fixed;
@@ -37,7 +37,7 @@
 
 <body class="gray-bg" style="">
      <div id="bg">
-        <img src="/ancienttree/Public/Default/img/5.jpg" alt="">
+        <img src="/AncientTree/Public/Default/img/5.jpg" alt="">
     </div>
     <div class="middle-box text-center loginscreen animated fadeInDown">
         <div>
@@ -69,8 +69,8 @@
     </div>
 
     <!-- Mainly scripts -->
-    <script src="/ancienttree/Public/Default/js/jquery-2.1.1.js"></script>
-    <script src="/ancienttree/Public/Default/js/bootstrap.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/jquery-2.1.1.js"></script>
+    <script src="/AncientTree/Public/Default/js/bootstrap.min.js"></script>
 
 </body>
 

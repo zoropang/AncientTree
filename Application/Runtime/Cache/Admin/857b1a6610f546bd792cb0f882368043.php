@@ -1,5 +1,4 @@
 <?php if (!defined('THINK_PATH')) exit();?>
-
   <!DOCTYPE html>
 <html>
 
@@ -7,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>后台管理~</title>
+    <title>里程密-网站配置</title>
     <link href="/AncientTree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
     <link href="/AncientTree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="/AncientTree/Public/Default/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
@@ -34,8 +33,11 @@
 <body>
     <div id="wrapper">
 
+<link href="/AncientTree/Public/Default/jquery-upload-file/css/uploadfile.css" rel="stylesheet">
+<link href="/AncientTree/Public/Default/jquery-upload-file/css/uploadfile.custom.css" rel="stylesheet">
+
         <!-- start left -->
-               
+
       <nav class="navbar-default navbar-static-side" role="navigation" id = "navs">
             <div class="sidebar-collapse">
                 <ul class="nav" id="side-menu">
@@ -158,100 +160,130 @@
                 </div>
 
          <!-- end left -->
-        <div class="row">
-        <center><h1>程序信息</h1></center>
-        <div class="col-lg-2">
-                    <div class="widget navy-bg p-lg text-center">
-                        <div class="m-b-md">
-                            <i class="fa fa-shield fa-4x"></i>
-                            <h1 class="m-xs">Power</h1>
-                            <h3 class="font-bold no-margins">
-                                作者
-                            </h3>
-                            <small>信息</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                        <div class="widget-head-color-box navy-bg p-lg text-center">
-                            <div class="m-b-md">
-                            <h2 class="font-bold no-margins">
-                                MonkeyCode
-                            </h2>
-                                <small>一个苦逼的码农</small>
-                            </div>
-                            <img src="/AncientTree/Public/Uploads/default.png" class="img-circle circle-border m-b-md" alt="profile" width="128px;">
-                            <div>
-                                <span>我不惧怕敌人是因为我有队友</span> |
-                            </div>
-                        </div>
-                        <div class="widget-text-box">
-                            <h4 class="media-heading">他说</h4>
-                            <p>爱上网，爱装逼，但是不搞基. <br>欢迎使用里程密开源博客系统，希望我们一起把里程密做的更好</p>
-                        </div>
+        <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>网站配置</h2>
                 </div>
                 <div class="col-lg-2">
-                    <div class="widget lazur-bg p-lg text-center">
-                        <div class="m-b-md">
-                            <i class="fa fa-warning fa-4x"></i>
-                            <h1 class="m-xs">Blog</h1>
-                            <h3 class="font-bold no-margins">
-                                程序
-                            </h3>
-                            <small>信息</small>
+
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <!-- <h5>All form elements <small>With custom checbox and radion elements.</small></h5> -->
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">Config option 1</a>
+                                    </li>
+                                    <li><a href="#">Config option 2</a>
+                                    </li>
+                                </ul>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    </div>
-                <div class="col-lg-4">
-                    <div class="widget lazur-bg p-xl">
-                                <h2>
-                                    里程密开源博客系统
-                                </h2>
-                        <ul class="list-unstyled m-t-md">
-                            <li>
-                                <label>官网网址：</label>
-                                <a href="<?php echo ($version["gfurl"]); ?>"><?php echo ($version["gfurl"]); ?></a>
-                            </li>
-                            <li>
-                                <label>Github项目地址：</label>
-                                <a href="https://github.com/lcm1475/lichengmi">https://github.com/lcm1475/lichengmi</a>
-                            </li>
-                            <li>
-                                <label>交流群群号：</label>
-                                    <?php echo ($version["qun"]); ?>
-                            </li>
-                            <li>
-                                <label>当前系统版本：</label>
-                                <?php echo ($version["now_version"]); ?>
-                            </li>
-                            <?php if($version["version"] == 999): ?><li>
-                                <label>最新系统版本：</label>
-                                V<?php echo ($version["version"]); ?>  <br>
-                                恭喜您，当前是最新版本
-                            </li>
-                            <?php else: ?>
-                            <li>
-                                <label>更新日期：</label>
-                                <?php echo ($version["gxctime"]); ?>
-                            </li>
-                            <li>
-                                <label>最新系统版本：</label>
-                                <span style = "color:red;"><b>V<?php echo ($version["version"]); ?></b></span><br>
-                                <a href="<?php echo ($version["gxurl"]); ?>" target="_blank"><button type="button" class="btn btn-w-m btn-warning" style="background: #CC9966;border-color: #CC9966;">点击查看详情</button></a>
-                                <a href="<?php echo U('OnlineUpdate/update_start');?>" target="_blank" onclick="return shifou()"><button type="button" class="btn btn-w-m btn-warning" style="background: #CC0033;border-color: #CC0033;">点击进行更新</button></a>
-                            </li>
-                            <br>
-                            <li>
-                                <label>更新细节：</label>
-                               <?php echo ($version["content"]); ?>
-                            </li><?php endif; ?>
-                        </ul>
+                        <div class="ibox-content">
+                            <form method="post" class="form-horizontal" action="<?php echo U('Site/doedit',array('id'=>$arr['id']));?>" enctype="multipart/form-data">
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">网站标题</label>
+
+                                    <div class="col-sm-8"><input type="text" class="form-control" name="title" required value = "<?php echo ($arr["title"]); ?>"></div>
+                                </div>
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">网站名称</label>
+
+                                    <div class="col-sm-8"><input type="text" class="form-control" name="name" required value = "<?php echo ($arr["name"]); ?>"></div>
+                                </div>
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">副标题</label>
+
+                                    <div class="col-sm-8"><input type="text" class="form-control" name="set_content" required value = "<?php echo ($arr["set_content"]); ?>"></div>
+                                </div>
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">管理员邮箱</label>
+
+                                    <div class="col-sm-8"><input type="text" class="form-control" name="admin_email" required value = "<?php echo ($arr["admin_email"]); ?>"></div>
+                                </div>
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">上传文件大小限制(M为单位 填写数字 例如8 就是8M 0为不限制)</label>
+
+                                    <div class="col-sm-8"><input type="text" class="form-control" name="file_size" required value = "<?php echo ($arr["file_size"]); ?>"></div>
+                                </div>
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">网站关键字</label>
+                                    <div class="col-sm-8"><textarea name = "keywords" required class="form-control"><?php echo ($arr["keywords"]); ?></textarea></div>
+                                </div>
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">网站描述</label>
+                                    <div class="col-sm-8"><textarea name = "description" required class="form-control"><?php echo ($arr["description"]); ?></textarea></div>
+                                </div>
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">网站ICP备案号</label>
+                                    <div class="col-sm-8"><textarea name = "icp" required class="form-control"><?php echo ($arr["icp"]); ?></textarea></div>
+                                </div>
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">网站统计代码</label>
+                                    <div class="col-sm-8"><textarea name = "statistics" required class="form-control"><?php echo ($arr["statistics"]); ?></textarea></div>
+                                </div>
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">邀请码说明</label>
+                                    <div class="col-sm-8"><textarea name = "code" required class="form-control"><?php echo ($arr["code"]); ?></textarea></div>
+                                </div>
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">友情链接说明</label>
+                                    <div class="col-sm-8"><textarea name = "friend_link" required class="form-control"><?php echo ($arr["friend_link"]); ?></textarea></div>
+                                </div>
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">网站LOGO</label>
+                                <div class="col-sm-4"><div id="fileuploader">上传</div></div>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="logo" required value = "<?php echo ($arr["logo"]); ?>" id = "logo">
+                                    <div style="height: 170px;width: 100%;padding: 15px;"><img src="<?php echo ($arr["logo"]); ?>" height  = "170px;"></div>
+                                </div>
+                                </div>
+                                     <div class="hr-line-dashed"></div>
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">注册是否需要注册码</label>
+                                    <div class="col-sm-3">
+                                        <select name="userStatus">
+                                            <option value="0" <?php if($arr["userstatus"] == 0): ?>selected<?php endif; ?>>不需要</option>
+                                            <option value="1" <?php if($arr["userstatus"] == 1): ?>selected<?php endif; ?>>需要</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">注册支持会员投稿</label>
+                                    <div class="col-sm-3">
+                                        <select name="submission">
+                                            <option value="0" <?php if($arr["submission"] == 0): ?>selected<?php endif; ?>>支持</option>
+                                            <option value="1" <?php if($arr["submission"] == 1): ?>selected<?php endif; ?>>不支持</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">发表文章是否需要审核</label>
+                                    <div class="col-sm-3">
+                                        <select name="articleSatus">
+                                            <option value="0" <?php if($arr["articlesatus"] == 0): ?>selected<?php endif; ?>>不需要</option>
+                                            <option value="1" <?php if($arr["articlesatus"] == 1): ?>selected<?php endif; ?>>需要</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group has-success"><label class="col-sm-4 control-label">是否显示幻灯片</label>
+                                    <div class="col-sm-3">
+                                        <select name="slides_display">
+                                            <option value="0" <?php if($arr["slides_display"] == 0): ?>selected<?php endif; ?>>显示</option>
+                                            <option value="1" <?php if($arr["slides_display"] == 1): ?>selected<?php endif; ?>>不显示</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                </div>
+                               <div class="ibox-content">
+                            <div class="text-center">
+                            <input type="submit" value="保存" class="btn btn-primary" data-toggle="modal">
+                            </div>
 
                     </div>
+                            </form>
+                        </div>
                 </div>
 
-                </div>
-            <!-- start footer -->
+            </div>
+    <!-- start footer -->
                     
 <div class="footer">
     <div class="pull-right">
@@ -323,12 +355,31 @@
         </script>
     <!-- Toastr -->
 
+                    <script src="/AncientTree/Public/Default/jquery-upload-file/js/jquery.form.js"></script>
+                    <script src="/AncientTree/Public/Default/jquery-upload-file/js/jquery.uploadfile.js"></script>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            $("#fileuploader").uploadFile({
+                                url:"<?php echo U('Site/upload_logo');?>", //上传URL
+                                fileName:"logo", //名称
+                                maxFileCount:1, //上传文件数量
+                                acceptFiles:"image/*", //类型
+                                formData: {name:"logo"}, //通过FROM传过去的参数
+                                onSuccess:function(files,data,xhr,pd){
+                                    if(data.success){
+                                        $(".ajax-file-upload-filename:contains("+files+")").after('<div style = "color:red;">上传成功</div>');
+                                        $("#logo").val(data.file_path);
+                                    }else{
+
+                                    }
+                                },
+                                onError: function(files,status,errMsg,pd){
+                                    $(".ajax-file-upload-filename:contains("+files+")").after('<div style = "color:red;">上传失败</div>');
+                                    alert('上传失败请检查,错误提示：'+errMsg);
+                                }
+                            });
+                        });
+                    </script>
             <!-- end footer -->
-            </div>
         </div>
-
-        </div>
-
-    </div>
-</body>
-</html>
+</script>

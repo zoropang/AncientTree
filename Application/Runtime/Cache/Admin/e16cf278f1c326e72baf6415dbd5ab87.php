@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>里程密-添加文章</title>
-    <link href="/ancienttree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
     <!-- Toastr style -->
-    <link href="/ancienttree/Public/Default/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/plugins/toastr/toastr.min.css" rel="stylesheet">
 
     <!-- Gritter -->
-    <link href="/ancienttree/Public/Default/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
 
-    <link href="/ancienttree/Public/Default/css/animate.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/css/style.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/animate.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/style.css" rel="stylesheet">
 
 </head>
 <style>
@@ -33,10 +33,10 @@
 <body>
     <div id="wrapper">
 
-<link rel="stylesheet" href="/ancienttree/Public/Default/simditor/styles/simditor.css">
-<link rel="stylesheet" href="/ancienttree/Public/Default/simditor/styles/simditor-markdown.css">
-<link href="/ancienttree/Public/Default/jquery-upload-file/css/uploadfile.css" rel="stylesheet">
-<link href="/ancienttree/Public/Default/jquery-upload-file/css/uploadfile.custom.css" rel="stylesheet">
+<link rel="stylesheet" href="/AncientTree/Public/Default/simditor/styles/simditor.css">
+<link rel="stylesheet" href="/AncientTree/Public/Default/simditor/styles/simditor-markdown.css">
+<link href="/AncientTree/Public/Default/jquery-upload-file/css/uploadfile.css" rel="stylesheet">
+<link href="/AncientTree/Public/Default/jquery-upload-file/css/uploadfile.custom.css" rel="stylesheet">
 </head>
         <!-- start left -->
 
@@ -131,7 +131,7 @@
                     </li>
                 <li>
                     <a href="<?php echo U('Login/logout');?>">
-                        <i class="fa fa-sign-out"></i>退出登录
+                        <i class="fa fa-sign-out"></i><span class="nav-label">退出登录</span>
                     </a>
                 </li>
             </ul>
@@ -340,29 +340,29 @@
 </body>
 </html>
            <!-- Mainly scripts -->
-    <script src="/ancienttree/Public/Default/js/jquery-2.1.1.js"></script>
-    <script src="/ancienttree/Public/Default/js/jquery.cookie.js"></script>
-    <script src="/ancienttree/Public/Default/js/inspinia.js"></script>
-    <script src="/ancienttree/Public/Default/js/bootstrap.min.js"></script>
-    <script src="/ancienttree/Public/Default/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="/ancienttree/Public/Default/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/jquery-2.1.1.js"></script>
+    <script src="/AncientTree/Public/Default/js/jquery.cookie.js"></script>
+    <script src="/AncientTree/Public/Default/js/inspinia.js"></script>
+    <script src="/AncientTree/Public/Default/js/bootstrap.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
     <!-- Flot -->
-    <script src="/ancienttree/Public/Default/js/plugins/flot/jquery.flot.js"></script>
-    <script src="/ancienttree/Public/Default/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="/ancienttree/Public/Default/js/plugins/flot/jquery.flot.spline.js"></script>
-    <script src="/ancienttree/Public/Default/js/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="/ancienttree/Public/Default/js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/flot/jquery.flot.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/flot/jquery.flot.pie.js"></script>
 
     <!-- Custom and plugin javascript -->
 
-    <script src="/ancienttree/Public/Default/js/plugins/pace/pace.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/pace/pace.min.js"></script>
 
     <!-- jQuery UI -->
-    <script src="/ancienttree/Public/Default/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/jquery-ui/jquery-ui.min.js"></script>
 
     <!-- 消息通知 -->
-    <script src="/ancienttree/Public/Default/js/plugins/gritter/jquery.gritter.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/gritter/jquery.gritter.min.js"></script>
 
 <script>
     $(function(){
@@ -389,15 +389,15 @@
         </script>
     <!-- Toastr -->
 
-                    <script type="text/javascript" src="/ancienttree/Public/Default/simditor/scripts/module.js"></script>
-                    <script type="text/javascript" src="/ancienttree/Public/Default/simditor/scripts/uploader.js"></script>
-                    <script type="text/javascript" src="/ancienttree/Public/Default/simditor/scripts/hotkeys.js"></script>
-                    <script type="text/javascript" src="/ancienttree/Public/Default/simditor/scripts/simditor.js"></script>
-                    <script type="text/javascript" src="/ancienttree/Public/Default/simditor/scripts/marked.js"></script>
-                    <script type="text/javascript" src="/ancienttree/Public/Default/simditor/scripts/to-markdown.js"></script>
-                    <script type="text/javascript" src="/ancienttree/Public/Default/simditor/scripts/simditor-markdown.js"></script>
-                    <script src="/ancienttree/Public/Default/jquery-upload-file/js/jquery.form.js"></script>
-                    <script src="/ancienttree/Public/Default/jquery-upload-file/js/jquery.uploadfile.js"></script>
+                    <script type="text/javascript" src="/AncientTree/Public/Default/simditor/scripts/module.js"></script>
+                    <script type="text/javascript" src="/AncientTree/Public/Default/simditor/scripts/uploader.js"></script>
+                    <script type="text/javascript" src="/AncientTree/Public/Default/simditor/scripts/hotkeys.js"></script>
+                    <script type="text/javascript" src="/AncientTree/Public/Default/simditor/scripts/simditor.js"></script>
+                    <script type="text/javascript" src="/AncientTree/Public/Default/simditor/scripts/marked.js"></script>
+                    <script type="text/javascript" src="/AncientTree/Public/Default/simditor/scripts/to-markdown.js"></script>
+                    <script type="text/javascript" src="/AncientTree/Public/Default/simditor/scripts/simditor-markdown.js"></script>
+                    <script src="/AncientTree/Public/Default/jquery-upload-file/js/jquery.form.js"></script>
+                    <script src="/AncientTree/Public/Default/jquery-upload-file/js/jquery.uploadfile.js"></script>
                     <script type="text/javascript">
                         $(document).ready(function() {
                             $("#fileuploader1").uploadFile({
