@@ -1,0 +1,175 @@
+[ 2017-08-22T17:41:52+08:00 ] ::1 /ancienttree/index.php?m=home&c=category&a=index&id=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `category` WHERE ( fid = 0 ) ORDER BY sort desc  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `category` WHERE ( fid != 0 ) ORDER BY sort desc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `site` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `site` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `email_set` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `email_set` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `friendlink` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `friendlink` ORDER BY id desc  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `category` WHERE ( id =22 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE ( fid = '22' AND status = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0020s ]
+SQL: SELECT a.*,b.truename FROM article a,user b WHERE ( a.status = 0 and b.id = a.uid and a.fid = 22 ) ORDER BY a.istop desc,a.id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: muser D:\xampp\htdocs\AncientTree\Application\Runtime\Cache\Home\4a5828cf143b01e7fa58390299b5887b.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-08-22T18:49:15+08:00 ] ::1 /ancienttree/index.php?m=Home&c=Category&a=index&id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `category` WHERE ( fid = 0 ) ORDER BY sort desc  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `category` WHERE ( fid != 0 ) ORDER BY sort desc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `site` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `site` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `email_set` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `email_set` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `friendlink` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `friendlink` ORDER BY id desc  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `category` WHERE ( id =8 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE ( fid = '8' AND status = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0030s ]
+SQL: SELECT a.*,b.truename FROM article a,user b WHERE ( a.status = 0 and b.id = a.uid and a.fid = 8 ) ORDER BY a.istop desc,a.id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: muser D:\xampp\htdocs\AncientTree\Application\Runtime\Cache\Home\4a5828cf143b01e7fa58390299b5887b.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-08-22T18:49:16+08:00 ] ::1 /ancienttree/index.php?m=Home&c=Category&a=index&id=23
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `category` WHERE ( fid = 0 ) ORDER BY sort desc  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( fid != 0 ) ORDER BY sort desc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `site` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `site` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `email_set` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `email_set` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `friendlink` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `friendlink` ORDER BY id desc  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `category` WHERE ( id =23 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE ( fid = '23' AND status = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0020s ]
+SQL: SELECT a.*,b.truename FROM article a,user b WHERE ( a.status = 0 and b.id = a.uid and a.fid = 23 ) ORDER BY a.istop desc,a.id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: muser D:\xampp\htdocs\AncientTree\Application\Runtime\Cache\Home\4a5828cf143b01e7fa58390299b5887b.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-08-22T18:49:16+08:00 ] ::1 /ancienttree/index.php?m=Home&c=Category&a=index&id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `category` WHERE ( fid = 0 ) ORDER BY sort desc  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `category` WHERE ( fid != 0 ) ORDER BY sort desc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `site` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `site` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `email_set` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `email_set` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `friendlink` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `friendlink` ORDER BY id desc  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `category` WHERE ( id =2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE ( fid = '2' AND status = 0 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0020s ]
+SQL: SELECT a.*,b.truename FROM article a,user b WHERE ( a.status = 0 and b.id = a.uid and a.fid = 2 ) ORDER BY a.istop desc,a.id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: muser D:\xampp\htdocs\AncientTree\Application\Runtime\Cache\Home\4a5828cf143b01e7fa58390299b5887b.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-08-22T18:49:18+08:00 ] ::1 /ancienttree/index.php?m=Home&c=Category&a=index&id=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `category` WHERE ( fid = 0 ) ORDER BY sort desc  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `category` WHERE ( fid != 0 ) ORDER BY sort desc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `site` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `site` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `email_set` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `email_set` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `friendlink` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `friendlink` ORDER BY id desc  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `category` WHERE ( id =22 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE ( fid = '22' AND status = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0020s ]
+SQL: SELECT a.*,b.truename FROM article a,user b WHERE ( a.status = 0 and b.id = a.uid and a.fid = 22 ) ORDER BY a.istop desc,a.id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: muser D:\xampp\htdocs\AncientTree\Application\Runtime\Cache\Home\4a5828cf143b01e7fa58390299b5887b.php 第 78 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

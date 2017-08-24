@@ -8,7 +8,7 @@
         // 演示URL
         'demo_url'=>'http://default.lcm.wang/',
         // 分类样式
-        'category_type'=>array('默认列表'=>1,'两排列表'=>2),
+        'category_type'=>array('默认列表'=>1,'两排列表'=>2,'概括信息'=>3,'详情图表'=>4),
         // 文章样式
         'article_type'=>array('普通文章'=>1,'音乐文章'=>2,'视频文章'=>3),
         //主题说明

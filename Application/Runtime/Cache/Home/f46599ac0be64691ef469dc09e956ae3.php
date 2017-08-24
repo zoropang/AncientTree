@@ -7,13 +7,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title><?php echo ($fenleiInfo["name"]); ?>-<?php echo ($SiteInfo["title"]); ?></title>
+    <title><?php echo ($articleInfo["title"]); ?>-<?php echo ($SiteInfo["title"]); ?></title>
     <meta name = "keywords" content="<?php echo ($SiteInfo["keywords"]); ?>" >
     <meta name = "description" content="<?php echo ($SiteInfo["description"]); ?>" >
-    <link href="/ancientTree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/ancientTree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="/ancientTree/Public/Default/css/animate.css" rel="stylesheet">
-    <link href="/ancientTree/Public/Default/css/style.css" rel="stylesheet">
+    <link href="/ancienttree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/ancienttree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/ancienttree/Public/Default/css/animate.css" rel="stylesheet">
+    <link href="/ancienttree/Public/Default/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -26,7 +26,7 @@
                 <ul class="nav" id="side-menu">
                     <li class="nav-header" style="text-align:center;">
                         <div class="dropdown profile-element"> <span>
-                        <a href="/ancientTree/index.php">
+                        <a href="/ancienttree/index.php">
                             <img alt="<?php echo ($SiteInfo["name"]); ?>" class="img-circle" src="<?php echo ($SiteInfo["logo"]); ?>" width="80px;"  height="80px;" />
                         </a>
                         </span>
@@ -188,93 +188,198 @@
                 </div>
                 <!-- 注册结束 -->
 
-
-
+<style>
+    #beijing img{
+        max-width: 100%;
+    }
+    #beijing p{
+        font-size: 14px;
+    }
+    #pinglun .well{
+        margin-top: 0px;
+        background-color: #fff;
+    }
+    #pinglun .feed-element{
+        padding-bottom: 0px;
+    }
+    #pinglun .btn-xs{
+        margin-left: 5px;
+    }
+</style>
 <!-- 本页导航栏开始 -->
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-        <h2>首页</h2>
+        <h2><?php echo ($articleInfo["title"]); ?></h2>
         <ol class="breadcrumb">
             <li>
-                <a href="/ancientTree/index.php">首页</a>
+                <a href="/ancienttree/index.php">首页</a>
+            </li>
+            <li>
+                <a href="<?php echo U('Category/index',array('id'=>$fenleiInfo['id']));?>"><?php echo ($fenleiInfo["name"]); ?></a>
             </li>
             <li class="active">
-                <strong><?php echo ($fenleiInfo["name"]); ?></strong>
+                <strong><?php echo ($articleInfo["title"]); ?></strong>
             </li>
         </ol>
     </div>
     <div class="col-lg-2">
-
     </div>
 </div>
+
 <!-- 本页导航栏结束 -->
 
 <!-- 正文开始 -->
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
-        <div class="col-lg-12">
-            <style>
-                .button_link{display:inline-block;position:relative;text-decoration:none;font-size:15px;color:#33ab6a;font-weight:bold;width:100%;height:100%;border:2px solid rgba(225,255,255,.8);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-transition:0.4s;-o-transition:0.4s;transition:0.4s;}
-                .button_link:hover{border:2px solid rgba(255,255,255,1);}
-                .button_link .line{display:inline-block;background-color:#BABABA ;position:absolute;-webkit-transition:0.5s ease;-o-transition:0.5s ease;transition:0.5s ease;}
-                .button_link .line_top{height:2px;width:0;left:-50%;top:-2px;}
-                .button_link:hover .line_top{width:100%;left:-2px;}
-                .button_link .line_right{height:0;width:2px;top:-50%;right:-2px;}
-                .button_link:hover .line_right{height:100%;top:-2px;}
-                .button_link .line_bottom{width:2px;height:0;bottom:-50%;left:-2px;}
-                .button_link:hover .line_bottom{height:100%;bottom:-2px;}
-                .button_link .line_left{height:2px;width:0;right:-50%;bottom:-2px;}
-                .button_link:hover .line_left{width:100%;right:-2px;}
-            </style>
-                <div class="row">
+        <div class="col-lg-12" style="padding:0px;">
+            <div class="col-lg-9">
                 <div class="ibox">
-                    <?php if(is_array($articleList)): foreach($articleList as $key=>$vo): ?><div class="ibox-content">
-                                <div class="row">
-                                    <div class="col-lg-2" >
-                                       <a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>" class="button_link">
-                                        <img alt="image" class="img-responsive" src="<?php echo ($vo["pic"]); ?>" style="min-height:120px;">
-                                        <span class="line line_top"></span>
-                                        <span class="line line_right"></span>
-                                        <span class="line line_bottom"></span>
-                                        <span class="line line_left"></span>
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-10">
-                                        <a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>" class="btn-link">
-                                            <h2>
-                                                <?php echo (msubstr($vo["title"],0,25,'utf-8',false)); ?>
-                                            </h2>
-                                        </a>
-                                        <p>
-                                            <?php echo (msubstr(strip_tags($vo["content"]),0,160,'utf-8',true)); ?> <br>
-                                        </p>
-                                        <div class="row">
-                                            <div class="col-md-10" >
-                                                <span class="label label-primary" style="font-size:12px;">作者：<?php echo ($vo["truename"]); ?></span>
-                                                <span class="label label-info"   style="font-size:12px;">查看：<?php echo ($vo["view"]); ?></span>
-                                                <span class="label label-warning"   style="font-size:12px;">时间：<?php echo (date( "Y-m-d",$vo["ctime"])); ?></span>
-
-                                            </div>
-                                            <div class="col-md-2" style="margin-top:10px;">
-                                                <div class="small text-right">
-                                                    <a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-w-m btn-danger">查看全文</button></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                        </div><?php endforeach; endif; ?>
-                </div>
-                    </div>
-                    <div class= "text-center"><?php echo ($page); ?></div>
-                </div>
+                    <div class="ibox-content">
+                        <div class="text-center article-title" style="margin:20px 0px 20px">
+                            <span class="text-muted">
+                                <h1>
+                                    <?php echo ($articleInfo["title"]); ?>
+                                </h1>
+                            </span>
+                        </div>
+                        <div style="margin-bottom:50px;">
+                            <?php if($articleInfo["viewtumb"] == 0): ?><img src="<?php echo ($articleInfo["pic"]); ?>" alt="" style="width:100%"><?php endif; ?>
+                        </div>
+                    <div id = "beijing">
+    <?php
+ $article_id = 'article_'.$articleInfo['id']; if($articleInfo['articlepassword'] != '' && $_SESSION[$article_id] != $articleInfo['articlepassword']){ ?>
+    <form class="form-horizontal" action="<?php echo U('Article/enarticlepassword',array('id'=>$articleInfo['id']));?>" method="post">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">请输入文章密码：</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" name="password" require></div>
+            </div>
+            <div class="mail-body text-center tooltip-demo">
+                <button class="btn btn-sm btn-primary" id="adds" type="submit">发送</button>
+            </div>
+        </form>
+        <?php
+ }else{ ?>
+    <p style="font-size:14px;" class="text2" >
+        <?php echo ($articleInfo["content"]); ?>
+    </p>
+    <?php if($articleInfo["file"] != ' '): ?><div class="mail-box">
+      <div class="mail-body">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+            附件下载
+            </div>
+            <div class="panel-body">
+                    <div class="col-sm-12"><a href="<?php echo ($articleInfo["file"]); ?>">点击下载</a></div>
             </div>
         </div>
-        <!-- 正文结束 -->
+      </div>
+    </div><?php endif; ?>
+    <?php
+} ?>
+</div>
+<hr>
+<div class="row">
 
-        <!-- 调用脚部文件 -->
-              <a href="#0" class="cd-top">↑</a>
+    <div class="col-md-12">
+        <h1>回复列表</h1>
+        <div id="pinglun">
+
+        </div>
+        <center>
+            <button type="button" class="btn btn-w-m btn-warning"  id = "more" onclick="replay()">加载更多评论</button>
+        </center>
+    </div>
+    <hr>
+</div>
+<?php
+if(($articleInfo['articlepassword'] != '' && $_SESSION[$article_id] == $articleInfo['articlepassword']) || ($articleInfo['articlepassword'] == '')){ ?>
+<hr>
+<div class="row" id = "huifus">
+    <div class="col-md-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <i class="fa fa-info-circle"></i>回复操作
+            </div>
+            <div class="panel-body">
+                <form action="<?php echo U('Article/replay',array('id'=>$articleInfo['id']));?>" method="post" class="form-horizontal">
+                    <div class="form-group"><label class="col-sm-2 control-label">楼层</label>
+                        <div class="col-sm-10" >
+                            <input type="text" value = "顶楼" disabled="" class="form-control" id = "replay">
+                        </div>
+                    </div>
+                    <input type="hidden" value = "" name = "replay" id = "huifuyincang">
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group"><label class="col-sm-2 control-label">昵称</label>
+                        <div class="col-sm-10"><input class="form-control" type="text" placeholder = "请填写昵称" name = "name" required <?php if($_SESSION['mid']!= ''): ?>value ="<?php echo (session('muser')); ?>"<?php endif; ?>></div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group"><label class="col-sm-2 control-label" >邮箱</label>
+                        <div class="col-sm-10"><input class="form-control" type="email" placeholder = "请填写邮箱" name = "email" required <?php if($_SESSION['mid']!= ''): ?>value ="<?php echo (session('memail')); ?>"<?php endif; ?>></div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group"><label class="col-sm-2 control-label" >内容</label>
+                        <div class="col-sm-10">
+                            <textarea name="content" class="form-control" cols="30" rows="5" placeholder = "请填写内容" required style="width:100%;"></textarea>
+                        </div>
+                    </div>
+                    <center>
+                        <div id="embed-captcha"></div>
+                        <p id="wait" class="show">正在加载验证码......</p>
+                        <p id="notice" class="hide">请先拖动验证码到相应位置</p>
+                    </center>
+                    <center><button type="submit" class="btn btn-w-m btn-warning" style="margin-top:10px;" id="popup-submit">提交回复</button></center>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+} ?>
+</div>
+</div>
+</div>
+<div class="col-lg-3">
+    <div class="widget-head-color-box navy-bg p-lg text-center" style="margin-top:0px;">
+        <div class="m-b-md">
+            <h2 class="font-bold no-margins">
+                <?php echo ($userInfo["truename"]); ?>
+            </h2>
+            <small>注册会员</small>
+        </div>
+        <img src="<?php echo ($userInfo["pic"]); ?>" class="img-circle circle-border m-b-md" alt="profile" height="150px;">
+    </div>
+    <div class="widget-text-box">
+        <p><span class="label label-success"  style="font-size:12px;">发布时间：<?php echo (date('Y-m-d H:i:s',$articleInfo["ctime"])); ?></span></p>
+        <p><span class="label label-success"  style="font-size:12px;">修改时间：<?php echo (date('Y-m-d H:i:s',$articleInfo["edittime"])); ?></span></p>
+        <p><span class="label label-success"  style="font-size:12px;">查看次数：<?php echo ($articleInfo["view"]); ?></span></p>
+        <p><span class="label label-success"  style="font-size:12px;">评论次数：<?php echo ($articleInfo["comment"]); ?></span></p>
+    </div>
+    <div class="widget lazur-bg p-xl text-left" style="padding-left:5px;padding-right:5px;">
+        <center><h2>TA的最新文章</h2></center>
+        <ul class="todo-list m-t ui-sortable" style="color:#000;">
+            <?php if(is_array($zuixin)): foreach($zuixin as $key=>$vo): ?><li>
+                    <span class="m-l-xs"><a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>"><?php echo (msubstr($vo["title"],0,10,'utf-8',true)); ?></a></span>
+                </li><?php endforeach; endif; ?>
+        </ul>
+    </div>
+    <div class="widget red-bg p-lg text-center" style="padding:10px;margin-bottom:50px;padding-left: 5px;">
+        <div class="m-b-md" style="margin-bottom:15px;">
+            <div><i class="fa fa-bell fa-4x"></i></div>
+            <button type="button" class="btn btn-w-m btn-info share" style="margin-top:15px;" id = "luandian">别点我</button>
+            <div id="socialShare"></div>
+        </div>
+    </div>
+
+
+</div>
+</div>
+</div>
+</div>
+<!-- 正文结束 -->
+
+<!-- 调用脚部文件 -->
+      <a href="#0" class="cd-top">↑</a>
         <div class="footer" style="z-index:9999;">
             <div class="pull-right">
                <a href="<?php echo U('Admin/Index/index');?>" target="_blank">后台登陆</a>&nbsp;&nbsp;<strong>如果你使用本站程序</strong> 请保留友情链接.
@@ -288,17 +393,17 @@
         </div>
         </div>
 
-    <script src="/ancientTree/Public/Default/js/jquery-2.1.1.js"></script>
-    <script src="/ancientTree/Public/Default/js/jquery-ui-1.10.4.min.js"></script>
-    <script src="/ancientTree/Public/Default/js/bootstrap.min.js"></script>
+    <script src="/ancienttree/Public/Default/js/jquery-2.1.1.js"></script>
+    <script src="/ancienttree/Public/Default/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="/ancienttree/Public/Default/js/bootstrap.min.js"></script>
     <!-- 手风琴菜单 -->
-    <script src="/ancientTree/Public/Default/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/ancienttree/Public/Default/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <!-- 滚动条 -->
-    <script src="/ancientTree/Public/Default/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/ancienttree/Public/Default/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
     <!-- 导航菜单 -->
-    <script src="/ancientTree/Public/Default/js/inspinia.js"></script>
+    <script src="/ancienttree/Public/Default/js/inspinia.js"></script>
     <!-- 进度条 -->
-    <script src="/ancientTree/Public/Default/js/plugins/pace/pace.min.js"></script>
+    <script src="/ancienttree/Public/Default/js/plugins/pace/pace.min.js"></script>
 
     <script>
         var s_url= "active_<?php echo ($is_active); ?>";
@@ -348,3 +453,106 @@
 </body>
 
 </html>
+
+<script>
+    function huifuss(a){
+        $("#replay").val("回复"+a);
+        $("#huifuyincang").val(a);
+    }
+    var num = 0; //当前加载的条数
+    var id = <?php echo ($_GET['id']); ?>;//当前文章ID
+    var userid = <?php echo ($userInfo["id"]); ?>;//文章所属用户ID
+    var pic = '';//定义图片
+    var tm = '';//定义时间
+    var shenfen = '';//定义身份
+    var jjj ='';//定义全局ajax返回数据变量
+    var str = '';//定义HTML字符串变量
+    function replay(){
+        $.ajax({
+         type: "POST",
+         url: "<?php echo U('Article/get_replay');?>",
+         data: "id="+id+"&num="+num,
+         success: function(msg){
+           if(msg == 5){
+            $("#more").html('没有更多内容了');
+        }else{
+            str = '';
+            jjj = eval(msg);
+            console.log(jjj)
+            for (var i in jjj)
+            {
+                if(jjj[i].replay == 0) replay_str(jjj[i])
+            }
+            $("#pinglun").append(str);
+            num = num+10;
+        }
+    }
+});
+    }
+    replay();
+
+    function replay_str(ddd){
+        if(ddd.uid == userid) shenfen = '<a class="btn btn-xs btn-danger">楼主</a>';
+                tm = new Date(parseInt(ddd.ctime) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ");
+                ddd.pic ==null ? pic = '/ancienttree/Public/Uploads/default.png' :  pic =ddd.pic;
+        str += '<div class="feed-element"><a class="pull-left"><img alt="'+ddd.name+'" class="img-circle" src="'+pic+'"></a><div class="media-body"><div class="well" style = "font-size:14px;"><span class = "label label-info" style = "font-size:12px;">'+ddd.name+"</span><div class='pull-right'></div><small class='pull-right'>"+tm+'</small><a class="btn btn-xs btn-warning" href = "#huifus"onclick="huifuss('+ddd.id+')">回复</a>'+shenfen+'<br/><br>'+ddd.content+'</div>';
+        if(ddd.son != undefined){
+            for(var s = 0;s<ddd.son.length;s++){
+                replay_str(jjj[ddd.son[s]]);
+            }
+        }
+        str += '</div></div>';
+    }
+</script>
+<!-- 回复验证码 -->
+<script src="http://static.geetest.com/static/tools/gt.js"></script>
+<script>
+    var handlerEmbed = function (captchaObj) {
+        $("#popup-submit").click(function (e) {
+            var validate = captchaObj.getValidate();
+            if (!validate) {
+                $("#notice")[0].className = "show";
+                setTimeout(function () {
+                    $("#notice")[0].className = "hide";
+                }, 2000);
+                e.preventDefault();
+            }
+        });
+        captchaObj.appendTo("#embed-captcha");
+        captchaObj.onReady(function () {
+            $("#wait")[0].className = "hide";
+        });
+    };
+    $.ajax({
+        url: "<?php echo U('Base/EchoMyVerify',array('t'=>$randtime));?>", // 加随机数防止缓存
+        type: "get",
+        dataType: "json",
+        success: function (data) {
+            initGeetest({
+                gt: data.gt,
+                challenge: data.challenge,
+                product: "embed", // 产品形式，包括：float，embed，popup。注意只对PC版验证码有效
+                offline: !data.success // 表示用户后台检测极验服务器是否宕机，一般不需要关注
+            }, handlerEmbed);
+        }
+    });
+</script>
+<link rel="stylesheet" href="/ancienttree/Public/Default/Share/css/share.css" type="text/css" />
+<script src="/ancienttree/Public/Default/Share/js/share.js"></script>
+<script>
+    $(function() {
+        $("#socialShare").socialShare({
+            content: '<?php echo (msubstr(strip_tags($vo["content"]),0,160,'utf-8',true)); ?>',
+            url:'http://<?php echo $_SERVER["SERVER_NAME"];?>/ancienttree/index.php?m=home&c=article&a=index&id=3',
+            titile:'<?php echo ($articleInfo["title"]); ?>-<?php echo ($SiteInfo["title"]); ?>',
+            pic:'<?php echo ($articleInfo["pic"]); ?>'
+        });
+
+    });
+    $("#shareQQ").on("click",function(){
+        $(this).socialShare("tQQ");
+    })
+    $("#luandian").click(function(){
+        $('body').html("<center><h1 style = 'color:#fff;'>都TM告诉你不要乱点了，不相信我是吧，看你现在怎么办</h1><a href = '#' onclick = 'javascript:history.go(-1)' style = 'color:#2f4050;'>返回</a></center>");
+    })
+</script>
