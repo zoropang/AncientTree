@@ -1,0 +1,48 @@
+<include file = "Article:header" />
+<!-- 正文开始 -->
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12" style="padding:0px;">
+            <div class="col-lg-9">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="text-center article-title" style="margin:20px 0px 20px">
+                            <span class="text-muted">
+                                <h1>
+                                    {$articleInfo.title}
+                                </h1>
+                            </span>
+                        </div>
+                        <div style="margin-bottom:50px;">
+
+                        </div>
+
+                        <div id = "beijing">
+                            <p style="font-size:14px;" class="text2" >  
+                                {$articleInfo.content}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget-head-color-box navy-bg p-lg text-center" style="margin-top:0px;">
+                    <if condition = "$articleInfo.viewtumb eq 0">
+                        <img src="{$articleInfo.pic}" class="img-rounded" alt="profile" width= "100%;">
+                    </if>
+                </div>
+                <div class="widget-text-box">
+                    <p><span class="label label-success"  style="font-size:12px;">发布时间：{$articleInfo.ctime|date ='Y-m-d H:i:s',###}</span></p>
+                    <p><span class="label label-success"  style="font-size:12px;">修改时间：{$articleInfo.edittime|date ='Y-m-d H:i:s',###}</span></p>
+                    <p><span class="label label-success"  style="font-size:12px;">查看次数：{$articleInfo.view}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 正文结束 -->
+
+<!-- 调用脚部文件 -->
+<include file = "Public:homefooter"  />
+
+

@@ -34,17 +34,23 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="side-menu">
                     <li class="nav-header" style="text-align:center;">
-                        <div class="dropdown profile-element"> <span>
-                        <a href="/AncientTree/index.php">
-                            <img alt="<?php echo ($SiteInfo["name"]); ?>" class="img-circle" src="<?php echo ($SiteInfo["logo"]); ?>" width="80px;"  height="80px;" />
-                        </a>
-                        </span>
-                        <span class="clear"> <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold"><?php echo ($SiteInfo["name"]); ?></strong>
-                        </span> <span class="text-muted text-xs block"><?php echo ($SiteInfo["set_content"]); ?></span> </span>
-                    </div>
-                    <div class="logo-element">
-                        <?php echo ($SiteInfo["name"]); ?>
-                    </div>
+                        <div class="dropdown profile-element"> 
+                            <span>
+                                <a href="/AncientTree/index.php">
+                                    <img alt="<?php echo ($SiteInfo["name"]); ?>" class="img-circle" src="<?php echo ($SiteInfo["logo"]); ?>" width="80px;"  height="80px;" />
+                                </a>
+                            </span>
+                            <span class="clear"> 
+                                <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold"><?php echo ($SiteInfo["name"]); ?></strong>
+                            </span> 
+                            <span class="text-muted text-xs block"><?php echo ($SiteInfo["set_content"]); ?></span> </span>
+                        </div>
+                        <div class="logo-element">
+                            <?php echo ($SiteInfo["name"]); ?>
+                        </div>
+                    </li>
+                <li>
+                    <a href="/AncientTree/index.php" ><i class="fa fa-university"></i> <span class="nav-label"> 首页</span></a>
                 </li>
                 <?php if(is_array($fenleiListone)): foreach($fenleiListone as $key=>$vo): ?><li>
                     <a href="#" ><i class="fa fa-bar-chart-o"></i> <span class="nav-label"><?php echo ($vo["name"]); ?></span><span class="fa arrow"></span></a>
@@ -52,9 +58,9 @@
                         <?php if(is_array($fenleiListtwo)): foreach($fenleiListtwo as $key=>$vs): if($vo["id"] == $vs['fid']): ?><li><a href="<?php echo U('Category/index',array('id'=>$vs['id']));?>"  is_active = "active_<?php echo ($vs["id"]); ?>"><?php echo ($vs["name"]); ?></a></li><?php endif; endforeach; endif; ?>
                     </ul>
                 </li><?php endforeach; endif; ?>
-                <li>
+                <!-- <li>
                     <a href="<?php echo U('Index/yaoqingma');?>" is_active = "active_003"><i class="fa fa-globe"></i> <span class="nav-label" style = "color:#ED5565;">邀请码与友链</span></a>
-                </li>
+                </li> -->
                     </ul>
 
                 </div>
@@ -121,6 +127,7 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
                                 <h4 class="modal-title">登陆中心</h4>
+                                <div class="pull-right"><a href="<?php echo U('Admin/Index/index');?>" target="_blank">进入后台</a></div>
                             </div>
                             <div class="modal-body">
 
@@ -222,26 +229,90 @@
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-lg-12">
+            <style>
+                .button_link{display:inline-block;position:relative;text-decoration:none;font-size:15px;color:#33ab6a;font-weight:bold;width:100%;height:100%;border:2px solid rgba(225,255,255,.8);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-transition:0.4s;-o-transition:0.4s;transition:0.4s;}
+                .button_link:hover{border:2px solid rgba(255,255,255,1);}
+                .button_link .line{display:inline-block;background-color:#BABABA ;position:absolute;-webkit-transition:0.5s ease;-o-transition:0.5s ease;transition:0.5s ease;}
+                .button_link .line_top{height:2px;width:0;left:-50%;top:-2px;}
+                .button_link:hover .line_top{width:100%;left:-2px;}
+                .button_link .line_right{height:0;width:2px;top:-50%;right:-2px;}
+                .button_link:hover .line_right{height:100%;top:-2px;}
+                .button_link .line_bottom{width:2px;height:0;bottom:-50%;left:-2px;}
+                .button_link:hover .line_bottom{height:100%;bottom:-2px;}
+                .button_link .line_left{height:2px;width:0;right:-50%;bottom:-2px;}
+                .button_link:hover .line_left{width:100%;right:-2px;}
+            </style>
             <div class="row">
                 <div class="ibox">
                     <div class="ibox-content">
                         <div class="row">                             
                             <div class="col-lg-10">
-                                <h2>温度</h2>
+                                <h2>古树id:<?php echo ($tid); ?></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">                             
+                            <div class="col-lg-10">
+                                <h2><?php echo ($title); ?></h2>
                             </div>
                             <div id="main" style="width: 100%;height:400px;"></div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <div class="row">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-lg-2" >
+                                <a href="<?php echo U('Article/index',array('id'=>$article['id']));?>" class="button_link">
+                                    <img alt="image" class="img-responsive" src="<?php echo ($article["pic"]); ?>" style="min-height:120px;">
+                                    <span class="line line_top"></span>
+                                    <span class="line line_right"></span>
+                                    <span class="line line_bottom"></span>
+                                    <span class="line line_left"></span>
+                                </a>
+                            </div>
+                            <div class="col-lg-10">
+                                <a href="<?php echo U('Article/index',array('id'=>$article['id']));?>" class="btn-link">
+                                    <h2>
+                                        <?php echo (msubstr($article["title"],0,25,'utf-8',false)); ?>
+                                    </h2>
+                                </a>
+                                <p>
+                                    <?php echo (msubstr(strip_tags($article["content"]),0,160,'utf-8',true)); ?> <br>
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-10" >
+                                        <span class="label label-primary" style="font-size:12px;">学名：<?php echo ($tree_info["name"]); ?></span>
+                                        <span class="label label-info"   style="font-size:12px;">树龄：<?php echo ($tree_info["age"]); ?></span>
+                                        <span class="label label-warning"   style="font-size:12px;">科属：<?php echo ($tree_info["info"]); ?></span>
+                                        <span class="label label-success"   style="font-size:12px;">状态：<?php echo ($tree_info["state"]); ?></span>
+                                    </div>
+                                    <div class="col-md-2" style="margin-top:10px;">
+                                        <div class="small text-right">
+                                            <a href="<?php echo U('Article/index',array('id'=>$article['id']));?>"><button type="button" class="btn btn-w-m btn-danger">查看全文</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+            
         </div>
     </div>
 </div>
 <!-- 正文结束 -->
 
+<div id='chart_param' style="display: none"><?php echo ($chart_param); ?></div>
+
 <!-- 调用脚部文件 -->
       <a href="#0" class="cd-top">↑</a>
-        <div class="footer" style="z-index:9999;">
+        <!-- <div class="footer" style="z-index:9999;">
             <div class="pull-right">
                <a href="<?php echo U('Admin/Index/index');?>" target="_blank">后台登陆</a>&nbsp;&nbsp;<strong>如果你使用本站程序</strong> 请保留友情链接.
             </div>
@@ -249,7 +320,7 @@
                 <strong>Copyright</strong> <a href="http://www.lcm.wang/">里程密</a> &copy; 2014-2016
                 管理员邮箱：<a href = "mailto:<?php echo ($SiteInfo["admin_email"]); ?>"><?php echo ($SiteInfo["admin_email"]); ?></a>&nbsp; &nbsp;统计：<?php echo ($SiteInfo["statistics"]); ?>&nbsp; &nbsp;ICP备案：<?php echo ($SiteInfo["icp"]); ?>
             </div>
-        </div>
+        </div> -->
 
         </div>
         </div>
@@ -321,8 +392,11 @@
         reqUrl = "http://localhost/AncientTree/index.php?m=Home&c=GetData&a=init";
         $.get(reqUrl, function (res, status) {
             var obj = eval ("(" + res + ")");
-            //window.alert(obj);
-            draw_chart('main', '摄氏度', obj, '温度');
+            //window.alert(obj.data);
+            var chart_param = document.getElementById("chart_param").innerText;
+            var param=JSON.parse(chart_param);
+
+            draw_chart('main', param.unit, obj.data, param.type_name);
         });
     });
 </script>

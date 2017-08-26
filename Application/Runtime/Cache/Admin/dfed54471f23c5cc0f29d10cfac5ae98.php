@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>里程密-修改分类</title>
-    <link href="/ancienttree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
     <!-- Toastr style -->
-    <link href="/ancienttree/Public/Default/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/plugins/toastr/toastr.min.css" rel="stylesheet">
 
     <!-- Gritter -->
-    <link href="/ancienttree/Public/Default/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
 
-    <link href="/ancienttree/Public/Default/css/animate.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/css/style.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/animate.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/style.css" rel="stylesheet">
 
 </head>
 <style>
@@ -41,8 +41,8 @@
                     <li class="nav-header" style="text-align:center;">
                         <div class="dropdown profile-element"> <span>
                         </span>
-                        <span class="clear"> <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold">管理员您好</strong>
-                        </span> <span class="text-muted text-xs block">欢迎回来~~   </span> </span>
+                        <span class="clear"> <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold">古树监控系统</strong>
+                        <!-- </span> <span class="text-muted text-xs block">欢迎回来~~   </span> </span> -->
                     </div>
                     <div class="logo-element">
                         里程密
@@ -96,20 +96,20 @@
                             <li><a href="<?php echo U('User/recovery');?>">会员回收站</a></li>
                         </ul>
                     </li>
-                    <li>
+                     <!-- <li>
                         <a href="index.html"><i class="fa fa-bank"></i> <span class="nav-label">主题管理</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="<?php echo U('Theme/index');?>">主题查看</a></li>
                             <li><a href="<?php echo U('Theme/down');?>" onclick="alert('静静等待 暂未开放');return false;">主题下载</a></li>
                         </ul>
-                    </li>
-                    <li>
+                    </li>  -->
+                    <!-- <li>
                         <a href="index.html"><i class="fa fa-bug"></i> <span class="nav-label">插件管理</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="<?php echo U('Plugs/index');?>" onclick="alert('静静等待 暂未开放');return false;">插件浏览</a></li>
                             <li><a href="<?php echo U('Plugs/recovery');?>" onclick="alert('静静等待 暂未开放');return false;">插件下载</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="index.html"><i class="fa fa-key"></i> <span class="nav-label">网站维护</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -126,7 +126,7 @@
                     </li>
                 <li>
                     <a href="<?php echo U('Login/logout');?>">
-                        <i class="fa fa-sign-out"></i>退出登录
+                        <i class="fa fa-sign-out"></i><span class="nav-label">退出登录</span>
                     </a>
                 </li>
             </ul>
@@ -144,12 +144,12 @@
                             </form>
                         </div>
                         <ul class="nav navbar-top-links navbar-right">
-                            <li>
+                            <!-- <li>
                                 <span class="m-r-sm text-muted welcome-message">每一个你不满意的现在,都有一个你不努力的曾经.</span>
-                            </li>
-                        <li>欢迎你，<?php echo (session('username')); ?></li>
+                            </li> -->
+                            <li>欢迎你，</li>
                             <li>
-                                <a data-toggle="modal" href="#myModal6">Good Luck</a>
+                                <a data-toggle="modal" href="#myModal6"><?php echo (session('username')); ?></a>
                             </li>
                         </ul>
 
@@ -255,29 +255,29 @@
 </body>
 </html>
            <!-- Mainly scripts -->
-    <script src="/ancienttree/Public/Default/js/jquery-2.1.1.js"></script>
-    <script src="/ancienttree/Public/Default/js/jquery.cookie.js"></script>
-    <script src="/ancienttree/Public/Default/js/inspinia.js"></script>
-    <script src="/ancienttree/Public/Default/js/bootstrap.min.js"></script>
-    <script src="/ancienttree/Public/Default/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="/ancienttree/Public/Default/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/jquery-2.1.1.js"></script>
+    <script src="/AncientTree/Public/Default/js/jquery.cookie.js"></script>
+    <script src="/AncientTree/Public/Default/js/inspinia.js"></script>
+    <script src="/AncientTree/Public/Default/js/bootstrap.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
     <!-- Flot -->
-    <script src="/ancienttree/Public/Default/js/plugins/flot/jquery.flot.js"></script>
-    <script src="/ancienttree/Public/Default/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="/ancienttree/Public/Default/js/plugins/flot/jquery.flot.spline.js"></script>
-    <script src="/ancienttree/Public/Default/js/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="/ancienttree/Public/Default/js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/flot/jquery.flot.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/flot/jquery.flot.pie.js"></script>
 
     <!-- Custom and plugin javascript -->
 
-    <script src="/ancienttree/Public/Default/js/plugins/pace/pace.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/pace/pace.min.js"></script>
 
     <!-- jQuery UI -->
-    <script src="/ancienttree/Public/Default/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/jquery-ui/jquery-ui.min.js"></script>
 
     <!-- 消息通知 -->
-    <script src="/ancienttree/Public/Default/js/plugins/gritter/jquery.gritter.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/gritter/jquery.gritter.min.js"></script>
 
 <script>
     $(function(){

@@ -10,10 +10,10 @@
     <title><?php echo ($fenleiInfo["name"]); ?>-<?php echo ($SiteInfo["title"]); ?></title>
     <meta name = "keywords" content="<?php echo ($SiteInfo["keywords"]); ?>" >
     <meta name = "description" content="<?php echo ($SiteInfo["description"]); ?>" >
-    <link href="/ancienttree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/css/animate.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/css/style.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/animate.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -25,17 +25,23 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="side-menu">
                     <li class="nav-header" style="text-align:center;">
-                        <div class="dropdown profile-element"> <span>
-                        <a href="/ancienttree/index.php">
-                            <img alt="<?php echo ($SiteInfo["name"]); ?>" class="img-circle" src="<?php echo ($SiteInfo["logo"]); ?>" width="80px;"  height="80px;" />
-                        </a>
-                        </span>
-                        <span class="clear"> <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold"><?php echo ($SiteInfo["name"]); ?></strong>
-                        </span> <span class="text-muted text-xs block"><?php echo ($SiteInfo["set_content"]); ?></span> </span>
-                    </div>
-                    <div class="logo-element">
-                        <?php echo ($SiteInfo["name"]); ?>
-                    </div>
+                        <div class="dropdown profile-element"> 
+                            <span>
+                                <a href="/AncientTree/index.php">
+                                    <img alt="<?php echo ($SiteInfo["name"]); ?>" class="img-circle" src="<?php echo ($SiteInfo["logo"]); ?>" width="80px;"  height="80px;" />
+                                </a>
+                            </span>
+                            <span class="clear"> 
+                                <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold"><?php echo ($SiteInfo["name"]); ?></strong>
+                            </span> 
+                            <span class="text-muted text-xs block"><?php echo ($SiteInfo["set_content"]); ?></span> </span>
+                        </div>
+                        <div class="logo-element">
+                            <?php echo ($SiteInfo["name"]); ?>
+                        </div>
+                    </li>
+                <li>
+                    <a href="/AncientTree/index.php" ><i class="fa fa-university"></i> <span class="nav-label"> 首页</span></a>
                 </li>
                 <?php if(is_array($fenleiListone)): foreach($fenleiListone as $key=>$vo): ?><li>
                     <a href="#" ><i class="fa fa-bar-chart-o"></i> <span class="nav-label"><?php echo ($vo["name"]); ?></span><span class="fa arrow"></span></a>
@@ -43,9 +49,9 @@
                         <?php if(is_array($fenleiListtwo)): foreach($fenleiListtwo as $key=>$vs): if($vo["id"] == $vs['fid']): ?><li><a href="<?php echo U('Category/index',array('id'=>$vs['id']));?>"  is_active = "active_<?php echo ($vs["id"]); ?>"><?php echo ($vs["name"]); ?></a></li><?php endif; endforeach; endif; ?>
                     </ul>
                 </li><?php endforeach; endif; ?>
-                <li>
+                <!-- <li>
                     <a href="<?php echo U('Index/yaoqingma');?>" is_active = "active_003"><i class="fa fa-globe"></i> <span class="nav-label" style = "color:#ED5565;">邀请码与友链</span></a>
-                </li>
+                </li> -->
                     </ul>
 
                 </div>
@@ -112,6 +118,7 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
                                 <h4 class="modal-title">登陆中心</h4>
+                                <div class="pull-right"><a href="<?php echo U('Admin/Index/index');?>" target="_blank">进入后台</a></div>
                             </div>
                             <div class="modal-body">
 
@@ -196,7 +203,7 @@
         <h2>首页</h2>
         <ol class="breadcrumb">
             <li>
-                <a href="/ancienttree/index.php">首页</a>
+                <a href="/AncientTree/index.php">首页</a>
             </li>
             <li class="active">
                 <strong><?php echo ($fenleiInfo["name"]); ?></strong>
@@ -213,43 +220,59 @@
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-lg-12">
-                        <link rel="stylesheet" type="text/css" href="/ancienttree/Public/Default/doudong/css/type2.css" />
-                    <div class = "row">
-                        <?php if(is_array($articleList)): foreach($articleList as $key=>$vo): ?><div class="col-lg-6">
-                                <div class="ibox float-e-margins">
-                                    <div>
-                                        <div class="ibox-content no-padding border-left-right" >
-                                        <div class="grid">
-                                        <figure class="effect-layla">
-                                            <img alt="image" class="img-responsive" src="<?php echo ($vo["pic"]); ?>" style="width:100%;max-height:300px;">
-                                            <figcaption>
-                                            <h2><?php echo (msubstr(strip_tags($vo["title"]),0,20,'utf-8',false)); ?></h2>
-                                            <p><?php echo (msubstr(strip_tags($vo["content"]),0,20,'utf-8',true)); ?></p>
-                                            <a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>">View more</a>
-                                        </figcaption>
-                                        </figure>
-                                        </div>
+            <style>
+                .button_link{display:inline-block;position:relative;text-decoration:none;font-size:15px;color:#33ab6a;font-weight:bold;width:100%;height:100%;border:2px solid rgba(225,255,255,.8);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-transition:0.4s;-o-transition:0.4s;transition:0.4s;}
+                .button_link:hover{border:2px solid rgba(255,255,255,1);}
+                .button_link .line{display:inline-block;background-color:#BABABA ;position:absolute;-webkit-transition:0.5s ease;-o-transition:0.5s ease;transition:0.5s ease;}
+                .button_link .line_top{height:2px;width:0;left:-50%;top:-2px;}
+                .button_link:hover .line_top{width:100%;left:-2px;}
+                .button_link .line_right{height:0;width:2px;top:-50%;right:-2px;}
+                .button_link:hover .line_right{height:100%;top:-2px;}
+                .button_link .line_bottom{width:2px;height:0;bottom:-50%;left:-2px;}
+                .button_link:hover .line_bottom{height:100%;bottom:-2px;}
+                .button_link .line_left{height:2px;width:0;right:-50%;bottom:-2px;}
+                .button_link:hover .line_left{width:100%;right:-2px;}
+            </style>
+                <div class="row">
+                <div class="ibox">
+                    <?php if(is_array($articleList)): foreach($articleList as $key=>$vo): ?><div class="ibox-content">
+                                <div class="row">
+                                    <div class="col-lg-2" >
+                                       <a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>" class="button_link">
+                                        <img alt="image" class="img-responsive" src="<?php echo ($vo["pic"]); ?>" style="min-height:120px;">
+                                        <span class="line line_top"></span>
+                                        <span class="line line_right"></span>
+                                        <span class="line line_bottom"></span>
+                                        <span class="line line_left"></span>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>" class="btn-link">
+                                            <h2>
+                                                <?php echo (msubstr($vo["title"],0,25,'utf-8',false)); ?>
+                                            </h2>
+                                        </a>
+                                        <p>
+                                            <?php echo (msubstr(strip_tags($vo["content"]),0,160,'utf-8',true)); ?> <br>
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-10" >
+                                                <span class="label label-primary" style="font-size:12px;">作者：<?php echo ($vo["truename"]); ?></span>
+                                                <span class="label label-info"   style="font-size:12px;">查看：<?php echo ($vo["view"]); ?></span>
+                                                <span class="label label-warning"   style="font-size:12px;">时间：<?php echo (date( "Y-m-d",$vo["ctime"])); ?></span>
 
-                                        </div>
-                                        <div class="ibox-content profile-content" style="padding:10px;">
-                                            <a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>"><center><h2><strong><?php echo ($vo["title"]); ?></strong></h2></center></a>
-                                            <p><?php echo (msubstr(strip_tags($vo["content"]),0,100,'utf-8',true)); ?></p>
-                                            <span class="label label-primary" style="font-size:12px;">作者：<?php echo ($vo["truename"]); ?></span>
-                                            <span class="label label-info"   style="font-size:12px;">查看：<?php echo ($vo["view"]); ?></span>
-                                            <span class="label label-warning"   style="font-size:12px;">时间：<?php echo (date( "Y-m-d",$vo["ctime"])); ?></span>
-                                            <p>
-                                            </p>
-                                            <div class="user-button">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-danger btn-sm btn-block"><i class="fa fa-envelope"></i>点击阅读</button></a>
-                                                    </div>
+                                            </div>
+                                            <div class="col-md-2" style="margin-top:10px;">
+                                                <div class="small text-right">
+                                                    <a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-w-m btn-danger">查看全文</button></a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div><?php endforeach; endif; ?>
+
+                        </div><?php endforeach; endif; ?>
+                </div>
                     </div>
                     <div class= "text-center"><?php echo ($page); ?></div>
                 </div>
@@ -259,7 +282,7 @@
 
         <!-- 调用脚部文件 -->
               <a href="#0" class="cd-top">↑</a>
-        <div class="footer" style="z-index:9999;">
+        <!-- <div class="footer" style="z-index:9999;">
             <div class="pull-right">
                <a href="<?php echo U('Admin/Index/index');?>" target="_blank">后台登陆</a>&nbsp;&nbsp;<strong>如果你使用本站程序</strong> 请保留友情链接.
             </div>
@@ -267,22 +290,22 @@
                 <strong>Copyright</strong> <a href="http://www.lcm.wang/">里程密</a> &copy; 2014-2016
                 管理员邮箱：<a href = "mailto:<?php echo ($SiteInfo["admin_email"]); ?>"><?php echo ($SiteInfo["admin_email"]); ?></a>&nbsp; &nbsp;统计：<?php echo ($SiteInfo["statistics"]); ?>&nbsp; &nbsp;ICP备案：<?php echo ($SiteInfo["icp"]); ?>
             </div>
-        </div>
+        </div> -->
 
         </div>
         </div>
 
-    <script src="/ancienttree/Public/Default/js/jquery-2.1.1.js"></script>
-    <script src="/ancienttree/Public/Default/js/jquery-ui-1.10.4.min.js"></script>
-    <script src="/ancienttree/Public/Default/js/bootstrap.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/jquery-2.1.1.js"></script>
+    <script src="/AncientTree/Public/Default/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/bootstrap.min.js"></script>
     <!-- 手风琴菜单 -->
-    <script src="/ancienttree/Public/Default/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <!-- 滚动条 -->
-    <script src="/ancienttree/Public/Default/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
     <!-- 导航菜单 -->
-    <script src="/ancienttree/Public/Default/js/inspinia.js"></script>
+    <script src="/AncientTree/Public/Default/js/inspinia.js"></script>
     <!-- 进度条 -->
-    <script src="/ancienttree/Public/Default/js/plugins/pace/pace.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/pace/pace.min.js"></script>
 
     <script>
         var s_url= "active_<?php echo ($is_active); ?>";

@@ -24,17 +24,23 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="side-menu">
                     <li class="nav-header" style="text-align:center;">
-                        <div class="dropdown profile-element"> <span>
-                        <a href="__APP__">
-                            <img alt="{$SiteInfo.name}" class="img-circle" src="{$SiteInfo.logo}" width="80px;"  height="80px;" />
-                        </a>
-                        </span>
-                        <span class="clear"> <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold">{$SiteInfo.name}</strong>
-                        </span> <span class="text-muted text-xs block">{$SiteInfo.set_content}</span> </span>
-                    </div>
-                    <div class="logo-element">
-                        {$SiteInfo.name}
-                    </div>
+                        <div class="dropdown profile-element"> 
+                            <span>
+                                <a href="__APP__">
+                                    <img alt="{$SiteInfo.name}" class="img-circle" src="{$SiteInfo.logo}" width="80px;"  height="80px;" />
+                                </a>
+                            </span>
+                            <span class="clear"> 
+                                <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold">{$SiteInfo.name}</strong>
+                            </span> 
+                            <span class="text-muted text-xs block">{$SiteInfo.set_content}</span> </span>
+                        </div>
+                        <div class="logo-element">
+                            {$SiteInfo.name}
+                        </div>
+                    </li>
+                <li>
+                    <a href="__APP__" ><i class="fa fa-university"></i> <span class="nav-label"> 首页</span></a>
                 </li>
                 <foreach name = "fenleiListone" item = "vo">
                 <li>
@@ -48,9 +54,9 @@
                     </ul>
                 </li>
                 </foreach>
-                <li>
+                <!-- <li>
                     <a href="{:U('Index/yaoqingma')}" is_active = "active_003"><i class="fa fa-globe"></i> <span class="nav-label" style = "color:#ED5565;">邀请码与友链</span></a>
-                </li>
+                </li> -->
                     </ul>
 
                 </div>
@@ -119,6 +125,7 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
                                 <h4 class="modal-title">登陆中心</h4>
+                                <div class="pull-right"><a href="{:U('Admin/Index/index')}" target="_blank">进入后台</a></div>
                             </div>
                             <div class="modal-body">
 

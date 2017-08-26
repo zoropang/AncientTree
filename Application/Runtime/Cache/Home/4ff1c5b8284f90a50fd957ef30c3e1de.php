@@ -25,17 +25,23 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="side-menu">
                     <li class="nav-header" style="text-align:center;">
-                        <div class="dropdown profile-element"> <span>
-                        <a href="/AncientTree/index.php">
-                            <img alt="<?php echo ($SiteInfo["name"]); ?>" class="img-circle" src="<?php echo ($SiteInfo["logo"]); ?>" width="80px;"  height="80px;" />
-                        </a>
-                        </span>
-                        <span class="clear"> <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold"><?php echo ($SiteInfo["name"]); ?></strong>
-                        </span> <span class="text-muted text-xs block"><?php echo ($SiteInfo["set_content"]); ?></span> </span>
-                    </div>
-                    <div class="logo-element">
-                        <?php echo ($SiteInfo["name"]); ?>
-                    </div>
+                        <div class="dropdown profile-element"> 
+                            <span>
+                                <a href="/AncientTree/index.php">
+                                    <img alt="<?php echo ($SiteInfo["name"]); ?>" class="img-circle" src="<?php echo ($SiteInfo["logo"]); ?>" width="80px;"  height="80px;" />
+                                </a>
+                            </span>
+                            <span class="clear"> 
+                                <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold"><?php echo ($SiteInfo["name"]); ?></strong>
+                            </span> 
+                            <span class="text-muted text-xs block"><?php echo ($SiteInfo["set_content"]); ?></span> </span>
+                        </div>
+                        <div class="logo-element">
+                            <?php echo ($SiteInfo["name"]); ?>
+                        </div>
+                    </li>
+                <li>
+                    <a href="/AncientTree/index.php" ><i class="fa fa-university"></i> <span class="nav-label"> 首页</span></a>
                 </li>
                 <?php if(is_array($fenleiListone)): foreach($fenleiListone as $key=>$vo): ?><li>
                     <a href="#" ><i class="fa fa-bar-chart-o"></i> <span class="nav-label"><?php echo ($vo["name"]); ?></span><span class="fa arrow"></span></a>
@@ -43,9 +49,9 @@
                         <?php if(is_array($fenleiListtwo)): foreach($fenleiListtwo as $key=>$vs): if($vo["id"] == $vs['fid']): ?><li><a href="<?php echo U('Category/index',array('id'=>$vs['id']));?>"  is_active = "active_<?php echo ($vs["id"]); ?>"><?php echo ($vs["name"]); ?></a></li><?php endif; endforeach; endif; ?>
                     </ul>
                 </li><?php endforeach; endif; ?>
-                <li>
+                <!-- <li>
                     <a href="<?php echo U('Index/yaoqingma');?>" is_active = "active_003"><i class="fa fa-globe"></i> <span class="nav-label" style = "color:#ED5565;">邀请码与友链</span></a>
-                </li>
+                </li> -->
                     </ul>
 
                 </div>
@@ -112,6 +118,7 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
                                 <h4 class="modal-title">登陆中心</h4>
+                                <div class="pull-right"><a href="<?php echo U('Admin/Index/index');?>" target="_blank">进入后台</a></div>
                             </div>
                             <div class="modal-body">
 
@@ -321,7 +328,7 @@
 </div>
 <!-- 调用脚部文件 -->
       <a href="#0" class="cd-top">↑</a>
-        <div class="footer" style="z-index:9999;">
+        <!-- <div class="footer" style="z-index:9999;">
             <div class="pull-right">
                <a href="<?php echo U('Admin/Index/index');?>" target="_blank">后台登陆</a>&nbsp;&nbsp;<strong>如果你使用本站程序</strong> 请保留友情链接.
             </div>
@@ -329,7 +336,7 @@
                 <strong>Copyright</strong> <a href="http://www.lcm.wang/">里程密</a> &copy; 2014-2016
                 管理员邮箱：<a href = "mailto:<?php echo ($SiteInfo["admin_email"]); ?>"><?php echo ($SiteInfo["admin_email"]); ?></a>&nbsp; &nbsp;统计：<?php echo ($SiteInfo["statistics"]); ?>&nbsp; &nbsp;ICP备案：<?php echo ($SiteInfo["icp"]); ?>
             </div>
-        </div>
+        </div> -->
 
         </div>
         </div>

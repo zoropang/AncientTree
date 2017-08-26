@@ -41,8 +41,8 @@
                     <li class="nav-header" style="text-align:center;">
                         <div class="dropdown profile-element"> <span>
                         </span>
-                        <span class="clear"> <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold">管理员您好</strong>
-                        </span> <span class="text-muted text-xs block">欢迎回来~~   </span> </span>
+                        <span class="clear"> <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold">古树监控系统</strong>
+                        <!-- </span> <span class="text-muted text-xs block">欢迎回来~~   </span> </span> -->
                     </div>
                     <div class="logo-element">
                         里程密
@@ -96,20 +96,20 @@
                             <li><a href="<?php echo U('User/recovery');?>">会员回收站</a></li>
                         </ul>
                     </li>
-                    <li>
+                     <!-- <li>
                         <a href="index.html"><i class="fa fa-bank"></i> <span class="nav-label">主题管理</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="<?php echo U('Theme/index');?>">主题查看</a></li>
                             <li><a href="<?php echo U('Theme/down');?>" onclick="alert('静静等待 暂未开放');return false;">主题下载</a></li>
                         </ul>
-                    </li>
-                    <li>
+                    </li>  -->
+                    <!-- <li>
                         <a href="index.html"><i class="fa fa-bug"></i> <span class="nav-label">插件管理</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="<?php echo U('Plugs/index');?>" onclick="alert('静静等待 暂未开放');return false;">插件浏览</a></li>
                             <li><a href="<?php echo U('Plugs/recovery');?>" onclick="alert('静静等待 暂未开放');return false;">插件下载</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="index.html"><i class="fa fa-key"></i> <span class="nav-label">网站维护</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -144,12 +144,12 @@
                             </form>
                         </div>
                         <ul class="nav navbar-top-links navbar-right">
-                            <li>
+                            <!-- <li>
                                 <span class="m-r-sm text-muted welcome-message">每一个你不满意的现在,都有一个你不努力的曾经.</span>
-                            </li>
-                        <li>欢迎你，<?php echo (session('username')); ?></li>
+                            </li> -->
+                            <li>欢迎你，</li>
                             <li>
-                                <a data-toggle="modal" href="#myModal6">Good Luck</a>
+                                <a data-toggle="modal" href="#myModal6"><?php echo (session('username')); ?></a>
                             </li>
                         </ul>
 

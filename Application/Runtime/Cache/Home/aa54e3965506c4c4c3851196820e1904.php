@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title><?php echo ($fenleiInfo["name"]); ?>-<?php echo ($SiteInfo["title"]); ?></title>
+    <title><?php echo ($articleInfo["title"]); ?>-<?php echo ($SiteInfo["title"]); ?></title>
     <meta name = "keywords" content="<?php echo ($SiteInfo["keywords"]); ?>" >
     <meta name = "description" content="<?php echo ($SiteInfo["description"]); ?>" >
     <link href="/AncientTree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
@@ -195,93 +195,89 @@
                 </div>
                 <!-- 注册结束 -->
 
-
-
+<style>
+    #beijing img{
+        max-width: 100%;
+    }
+    #beijing p{
+        font-size: 14px;
+    }
+    #pinglun .well{
+        margin-top: 0px;
+        background-color: #fff;
+    }
+    #pinglun .feed-element{
+        padding-bottom: 0px;
+    }
+    #pinglun .btn-xs{
+        margin-left: 5px;
+    }
+</style>
 <!-- 本页导航栏开始 -->
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-        <h2>首页</h2>
+        <h2><?php echo ($articleInfo["title"]); ?></h2>
         <ol class="breadcrumb">
             <li>
                 <a href="/AncientTree/index.php">首页</a>
             </li>
+            <li>
+                <a href="<?php echo U('Category/index',array('id'=>$fenleiInfo['id']));?>"><?php echo ($fenleiInfo["name"]); ?></a>
+            </li>
             <li class="active">
-                <strong><?php echo ($fenleiInfo["name"]); ?></strong>
+                <strong><?php echo ($articleInfo["title"]); ?></strong>
             </li>
         </ol>
     </div>
     <div class="col-lg-2">
-
     </div>
 </div>
+
 <!-- 本页导航栏结束 -->
 
 <!-- 正文开始 -->
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
-        <div class="col-lg-12">
-            <style>
-                .button_link{display:inline-block;position:relative;text-decoration:none;font-size:15px;color:#33ab6a;font-weight:bold;width:100%;height:100%;border:2px solid rgba(225,255,255,.8);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-transition:0.4s;-o-transition:0.4s;transition:0.4s;}
-                .button_link:hover{border:2px solid rgba(255,255,255,1);}
-                .button_link .line{display:inline-block;background-color:#BABABA ;position:absolute;-webkit-transition:0.5s ease;-o-transition:0.5s ease;transition:0.5s ease;}
-                .button_link .line_top{height:2px;width:0;left:-50%;top:-2px;}
-                .button_link:hover .line_top{width:100%;left:-2px;}
-                .button_link .line_right{height:0;width:2px;top:-50%;right:-2px;}
-                .button_link:hover .line_right{height:100%;top:-2px;}
-                .button_link .line_bottom{width:2px;height:0;bottom:-50%;left:-2px;}
-                .button_link:hover .line_bottom{height:100%;bottom:-2px;}
-                .button_link .line_left{height:2px;width:0;right:-50%;bottom:-2px;}
-                .button_link:hover .line_left{width:100%;right:-2px;}
-            </style>
-                <div class="row">
+        <div class="col-lg-12" style="padding:0px;">
+            <div class="col-lg-9">
                 <div class="ibox">
-                    <?php if(is_array($articleList)): foreach($articleList as $key=>$vo): ?><div class="ibox-content">
-                                <div class="row">
-                                    <div class="col-lg-2" >
-                                       <a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>" class="button_link">
-                                        <img alt="image" class="img-responsive" src="<?php echo ($vo["pic"]); ?>" style="min-height:120px;">
-                                        <span class="line line_top"></span>
-                                        <span class="line line_right"></span>
-                                        <span class="line line_bottom"></span>
-                                        <span class="line line_left"></span>
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-10">
-                                        <a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>" class="btn-link">
-                                            <h2>
-                                                <?php echo (msubstr($vo["title"],0,25,'utf-8',false)); ?>
-                                            </h2>
-                                        </a>
-                                        <p>
-                                            <?php echo (msubstr(strip_tags($vo["content"]),0,160,'utf-8',true)); ?> <br>
-                                        </p>
-                                        <div class="row">
-                                            <div class="col-md-10" >
-                                                <span class="label label-primary" style="font-size:12px;">作者：<?php echo ($vo["truename"]); ?></span>
-                                                <span class="label label-info"   style="font-size:12px;">查看：<?php echo ($vo["view"]); ?></span>
-                                                <span class="label label-warning"   style="font-size:12px;">时间：<?php echo (date( "Y-m-d",$vo["ctime"])); ?></span>
+                    <div class="ibox-content">
+                        <div class="text-center article-title" style="margin:20px 0px 20px">
+                            <span class="text-muted">
+                                <h1>
+                                    <?php echo ($articleInfo["title"]); ?>
+                                </h1>
+                            </span>
+                        </div>
+                        <div style="margin-bottom:50px;">
 
-                                            </div>
-                                            <div class="col-md-2" style="margin-top:10px;">
-                                                <div class="small text-right">
-                                                    <a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-w-m btn-danger">查看全文</button></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
 
-                        </div><?php endforeach; endif; ?>
-                </div>
+                        <div id = "beijing">
+                            <p style="font-size:14px;" class="text2" >  
+                                <?php echo ($articleInfo["content"]); ?>
+                            </p>
+                        </div>
                     </div>
-                    <div class= "text-center"><?php echo ($page); ?></div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget-head-color-box navy-bg p-lg text-center" style="margin-top:0px;">
+                    <?php if($articleInfo["viewtumb"] == 0): ?><img src="<?php echo ($articleInfo["pic"]); ?>" class="img-rounded" alt="profile" width= "100%;"><?php endif; ?>
+                </div>
+                <div class="widget-text-box">
+                    <p><span class="label label-success"  style="font-size:12px;">发布时间：<?php echo (date('Y-m-d H:i:s',$articleInfo["ctime"])); ?></span></p>
+                    <p><span class="label label-success"  style="font-size:12px;">修改时间：<?php echo (date('Y-m-d H:i:s',$articleInfo["edittime"])); ?></span></p>
+                    <p><span class="label label-success"  style="font-size:12px;">查看次数：<?php echo ($articleInfo["view"]); ?></span></p>
                 </div>
             </div>
         </div>
-        <!-- 正文结束 -->
+    </div>
+</div>
+<!-- 正文结束 -->
 
-        <!-- 调用脚部文件 -->
-              <a href="#0" class="cd-top">↑</a>
+<!-- 调用脚部文件 -->
+      <a href="#0" class="cd-top">↑</a>
         <!-- <div class="footer" style="z-index:9999;">
             <div class="pull-right">
                <a href="<?php echo U('Admin/Index/index');?>" target="_blank">后台登陆</a>&nbsp;&nbsp;<strong>如果你使用本站程序</strong> 请保留友情链接.

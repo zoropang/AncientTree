@@ -1,4 +1,13 @@
-<?php if (!defined('THINK_PATH')) exit();?><!-- 调用头部文件 -->
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="/AncientTree/Public/Default/js/echarts.js"></script>
+    <script src="/AncientTree/Public/Default/js/drawchart.js"></script>
+</head>
+</html>
+
+<!-- 调用头部文件 -->
 <!DOCTYPE html>
 <html>
 
@@ -233,55 +242,78 @@
                 .button_link .line_left{height:2px;width:0;right:-50%;bottom:-2px;}
                 .button_link:hover .line_left{width:100%;right:-2px;}
             </style>
-                <div class="row">
+            <div class="row">
                 <div class="ibox">
-                    <?php if(is_array($articleList)): foreach($articleList as $key=>$vo): ?><div class="ibox-content">
+                    <div class="ibox-content">
+                        <div class="row">                             
+                            <div class="col-lg-10">
+                                <h2>古树id:<?php echo ($tid); ?></h2>
+                            </div>
+                            <input type="text" id="target_appid_user" style="width:150px; float:left;margin-left:5px" class="form-control" placeholder="输入appid">
+					            <label style="margin-left:5px" class="btn btn-primary" onclick="search_detail_info()">搜索</label>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">                             
+                            <div class="col-lg-10">
+                                <h2><?php echo ($title); ?></h2>
+                            </div>
+                            <div id="main" style="width: 100%;height:400px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-lg-2" >
+                                <a href="<?php echo U('Article/index',array('id'=>$article['id']));?>" class="button_link">
+                                    <img alt="image" class="img-responsive" src="<?php echo ($article["pic"]); ?>" style="min-height:120px;">
+                                    <span class="line line_top"></span>
+                                    <span class="line line_right"></span>
+                                    <span class="line line_bottom"></span>
+                                    <span class="line line_left"></span>
+                                </a>
+                            </div>
+                            <div class="col-lg-10">
+                                <a href="<?php echo U('Article/index',array('id'=>$article['id']));?>" class="btn-link">
+                                    <h2>
+                                        <?php echo (msubstr($article["title"],0,25,'utf-8',false)); ?>
+                                    </h2>
+                                </a>
+                                <p>
+                                    <?php echo (msubstr(strip_tags($article["content"]),0,160,'utf-8',true)); ?> <br>
+                                </p>
                                 <div class="row">
-                                    <div class="col-lg-2" >
-                                       <a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>" class="button_link">
-                                        <img alt="image" class="img-responsive" src="<?php echo ($vo["pic"]); ?>" style="min-height:120px;">
-                                        <span class="line line_top"></span>
-                                        <span class="line line_right"></span>
-                                        <span class="line line_bottom"></span>
-                                        <span class="line line_left"></span>
-                                        </a>
+                                    <div class="col-md-10" >
+                                        <span class="label label-primary" style="font-size:12px;">学名：<?php echo ($tree_info["name"]); ?></span>
+                                        <span class="label label-info"   style="font-size:12px;">树龄：<?php echo ($tree_info["age"]); ?></span>
+                                        <span class="label label-warning"   style="font-size:12px;">科属：<?php echo ($tree_info["info"]); ?></span>
+                                        <span class="label label-success"   style="font-size:12px;">状态：<?php echo ($tree_info["state"]); ?></span>
                                     </div>
-                                    <div class="col-lg-10">
-                                        <a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>" class="btn-link">
-                                            <h2>
-                                                <?php echo (msubstr($vo["title"],0,25,'utf-8',false)); ?>
-                                            </h2>
-                                        </a>
-                                        <p>
-                                            <?php echo (msubstr(strip_tags($vo["content"]),0,160,'utf-8',true)); ?> <br>
-                                        </p>
-                                        <div class="row">
-                                            <div class="col-md-10" >
-                                                <span class="label label-primary" style="font-size:12px;">作者：<?php echo ($vo["truename"]); ?></span>
-                                                <span class="label label-info"   style="font-size:12px;">查看：<?php echo ($vo["view"]); ?></span>
-                                                <span class="label label-warning"   style="font-size:12px;">时间：<?php echo (date( "Y-m-d",$vo["ctime"])); ?></span>
-
-                                            </div>
-                                            <div class="col-md-2" style="margin-top:10px;">
-                                                <div class="small text-right">
-                                                    <a href="<?php echo U('Article/index',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-w-m btn-danger">查看全文</button></a>
-                                                </div>
-                                            </div>
+                                    <div class="col-md-2" style="margin-top:10px;">
+                                        <div class="small text-right">
+                                            <a href="<?php echo U('Article/index',array('id'=>$article['id']));?>"><button type="button" class="btn btn-w-m btn-danger">查看全文</button></a>
                                         </div>
                                     </div>
                                 </div>
-
-                        </div><?php endforeach; endif; ?>
-                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class= "text-center"><?php echo ($page); ?></div>
-                </div>
+                 </div>
             </div>
+            
         </div>
-        <!-- 正文结束 -->
+    </div>
+</div>
+<!-- 正文结束 -->
 
-        <!-- 调用脚部文件 -->
-              <a href="#0" class="cd-top">↑</a>
+<div id='chart_param' style="display: none"><?php echo ($chart_param); ?></div>
+
+<!-- 调用脚部文件 -->
+      <a href="#0" class="cd-top">↑</a>
         <!-- <div class="footer" style="z-index:9999;">
             <div class="pull-right">
                <a href="<?php echo U('Admin/Index/index');?>" target="_blank">后台登陆</a>&nbsp;&nbsp;<strong>如果你使用本站程序</strong> 请保留友情链接.
@@ -355,3 +387,17 @@
 </body>
 
 </html>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        reqUrl = "http://localhost/AncientTree/index.php?m=Home&c=GetData&a=init2";
+        $.get(reqUrl, function (res, status) {
+            var obj = eval ("(" + res + ")");
+            //window.alert(obj);
+            var chart_param = document.getElementById("chart_param").innerText;
+            var param=JSON.parse(chart_param);
+            draw_chart_2lines('main', param.unit1, obj.data1, param.type_name1, param.unit2, obj.data2, param.type_name2);
+        });
+    });
+</script>

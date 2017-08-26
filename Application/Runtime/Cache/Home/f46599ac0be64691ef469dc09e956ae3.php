@@ -10,10 +10,10 @@
     <title><?php echo ($articleInfo["title"]); ?>-<?php echo ($SiteInfo["title"]); ?></title>
     <meta name = "keywords" content="<?php echo ($SiteInfo["keywords"]); ?>" >
     <meta name = "description" content="<?php echo ($SiteInfo["description"]); ?>" >
-    <link href="/ancienttree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/css/animate.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/css/style.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/animate.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -25,17 +25,23 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="side-menu">
                     <li class="nav-header" style="text-align:center;">
-                        <div class="dropdown profile-element"> <span>
-                        <a href="/ancienttree/index.php">
-                            <img alt="<?php echo ($SiteInfo["name"]); ?>" class="img-circle" src="<?php echo ($SiteInfo["logo"]); ?>" width="80px;"  height="80px;" />
-                        </a>
-                        </span>
-                        <span class="clear"> <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold"><?php echo ($SiteInfo["name"]); ?></strong>
-                        </span> <span class="text-muted text-xs block"><?php echo ($SiteInfo["set_content"]); ?></span> </span>
-                    </div>
-                    <div class="logo-element">
-                        <?php echo ($SiteInfo["name"]); ?>
-                    </div>
+                        <div class="dropdown profile-element"> 
+                            <span>
+                                <a href="/AncientTree/index.php">
+                                    <img alt="<?php echo ($SiteInfo["name"]); ?>" class="img-circle" src="<?php echo ($SiteInfo["logo"]); ?>" width="80px;"  height="80px;" />
+                                </a>
+                            </span>
+                            <span class="clear"> 
+                                <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold"><?php echo ($SiteInfo["name"]); ?></strong>
+                            </span> 
+                            <span class="text-muted text-xs block"><?php echo ($SiteInfo["set_content"]); ?></span> </span>
+                        </div>
+                        <div class="logo-element">
+                            <?php echo ($SiteInfo["name"]); ?>
+                        </div>
+                    </li>
+                <li>
+                    <a href="/AncientTree/index.php" ><i class="fa fa-university"></i> <span class="nav-label"> 首页</span></a>
                 </li>
                 <?php if(is_array($fenleiListone)): foreach($fenleiListone as $key=>$vo): ?><li>
                     <a href="#" ><i class="fa fa-bar-chart-o"></i> <span class="nav-label"><?php echo ($vo["name"]); ?></span><span class="fa arrow"></span></a>
@@ -43,9 +49,9 @@
                         <?php if(is_array($fenleiListtwo)): foreach($fenleiListtwo as $key=>$vs): if($vo["id"] == $vs['fid']): ?><li><a href="<?php echo U('Category/index',array('id'=>$vs['id']));?>"  is_active = "active_<?php echo ($vs["id"]); ?>"><?php echo ($vs["name"]); ?></a></li><?php endif; endforeach; endif; ?>
                     </ul>
                 </li><?php endforeach; endif; ?>
-                <li>
+                <!-- <li>
                     <a href="<?php echo U('Index/yaoqingma');?>" is_active = "active_003"><i class="fa fa-globe"></i> <span class="nav-label" style = "color:#ED5565;">邀请码与友链</span></a>
-                </li>
+                </li> -->
                     </ul>
 
                 </div>
@@ -112,6 +118,7 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
                                 <h4 class="modal-title">登陆中心</h4>
+                                <div class="pull-right"><a href="<?php echo U('Admin/Index/index');?>" target="_blank">进入后台</a></div>
                             </div>
                             <div class="modal-body">
 
@@ -212,7 +219,7 @@
         <h2><?php echo ($articleInfo["title"]); ?></h2>
         <ol class="breadcrumb">
             <li>
-                <a href="/ancienttree/index.php">首页</a>
+                <a href="/AncientTree/index.php">首页</a>
             </li>
             <li>
                 <a href="<?php echo U('Category/index',array('id'=>$fenleiInfo['id']));?>"><?php echo ($fenleiInfo["name"]); ?></a>
@@ -380,7 +387,7 @@ if(($articleInfo['articlepassword'] != '' && $_SESSION[$article_id] == $articleI
 
 <!-- 调用脚部文件 -->
       <a href="#0" class="cd-top">↑</a>
-        <div class="footer" style="z-index:9999;">
+        <!-- <div class="footer" style="z-index:9999;">
             <div class="pull-right">
                <a href="<?php echo U('Admin/Index/index');?>" target="_blank">后台登陆</a>&nbsp;&nbsp;<strong>如果你使用本站程序</strong> 请保留友情链接.
             </div>
@@ -388,22 +395,22 @@ if(($articleInfo['articlepassword'] != '' && $_SESSION[$article_id] == $articleI
                 <strong>Copyright</strong> <a href="http://www.lcm.wang/">里程密</a> &copy; 2014-2016
                 管理员邮箱：<a href = "mailto:<?php echo ($SiteInfo["admin_email"]); ?>"><?php echo ($SiteInfo["admin_email"]); ?></a>&nbsp; &nbsp;统计：<?php echo ($SiteInfo["statistics"]); ?>&nbsp; &nbsp;ICP备案：<?php echo ($SiteInfo["icp"]); ?>
             </div>
-        </div>
+        </div> -->
 
         </div>
         </div>
 
-    <script src="/ancienttree/Public/Default/js/jquery-2.1.1.js"></script>
-    <script src="/ancienttree/Public/Default/js/jquery-ui-1.10.4.min.js"></script>
-    <script src="/ancienttree/Public/Default/js/bootstrap.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/jquery-2.1.1.js"></script>
+    <script src="/AncientTree/Public/Default/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/bootstrap.min.js"></script>
     <!-- 手风琴菜单 -->
-    <script src="/ancienttree/Public/Default/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <!-- 滚动条 -->
-    <script src="/ancienttree/Public/Default/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
     <!-- 导航菜单 -->
-    <script src="/ancienttree/Public/Default/js/inspinia.js"></script>
+    <script src="/AncientTree/Public/Default/js/inspinia.js"></script>
     <!-- 进度条 -->
-    <script src="/ancienttree/Public/Default/js/plugins/pace/pace.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/pace/pace.min.js"></script>
 
     <script>
         var s_url= "active_<?php echo ($is_active); ?>";
@@ -494,7 +501,7 @@ if(($articleInfo['articlepassword'] != '' && $_SESSION[$article_id] == $articleI
     function replay_str(ddd){
         if(ddd.uid == userid) shenfen = '<a class="btn btn-xs btn-danger">楼主</a>';
                 tm = new Date(parseInt(ddd.ctime) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ");
-                ddd.pic ==null ? pic = '/ancienttree/Public/Uploads/default.png' :  pic =ddd.pic;
+                ddd.pic ==null ? pic = '/AncientTree/Public/Uploads/default.png' :  pic =ddd.pic;
         str += '<div class="feed-element"><a class="pull-left"><img alt="'+ddd.name+'" class="img-circle" src="'+pic+'"></a><div class="media-body"><div class="well" style = "font-size:14px;"><span class = "label label-info" style = "font-size:12px;">'+ddd.name+"</span><div class='pull-right'></div><small class='pull-right'>"+tm+'</small><a class="btn btn-xs btn-warning" href = "#huifus"onclick="huifuss('+ddd.id+')">回复</a>'+shenfen+'<br/><br>'+ddd.content+'</div>';
         if(ddd.son != undefined){
             for(var s = 0;s<ddd.son.length;s++){
@@ -537,13 +544,13 @@ if(($articleInfo['articlepassword'] != '' && $_SESSION[$article_id] == $articleI
         }
     });
 </script>
-<link rel="stylesheet" href="/ancienttree/Public/Default/Share/css/share.css" type="text/css" />
-<script src="/ancienttree/Public/Default/Share/js/share.js"></script>
+<link rel="stylesheet" href="/AncientTree/Public/Default/Share/css/share.css" type="text/css" />
+<script src="/AncientTree/Public/Default/Share/js/share.js"></script>
 <script>
     $(function() {
         $("#socialShare").socialShare({
             content: '<?php echo (msubstr(strip_tags($vo["content"]),0,160,'utf-8',true)); ?>',
-            url:'http://<?php echo $_SERVER["SERVER_NAME"];?>/ancienttree/index.php?m=home&c=article&a=index&id=3',
+            url:'http://<?php echo $_SERVER["SERVER_NAME"];?>/AncientTree/index.php?m=Home&c=Article&a=index&id=2',
             titile:'<?php echo ($articleInfo["title"]); ?>-<?php echo ($SiteInfo["title"]); ?>',
             pic:'<?php echo ($articleInfo["pic"]); ?>'
         });

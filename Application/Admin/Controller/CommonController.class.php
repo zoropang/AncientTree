@@ -9,7 +9,7 @@ class CommonController extends Controller
             $m   = M("user");
             $arr = $m->where("username = '%s'", $_SESSION['username'])->find();
             if ($_SESSION['username'] == "" || $arr == null || $_SESSION['kouling'] != md5(md5($arr['username']))) {
-                  $this->error('非法操作', U('Admin/Login/login'), 3);
+                  $this->error('请先登陆', U('Admin/Login/login'), 3);
             }
       }
 

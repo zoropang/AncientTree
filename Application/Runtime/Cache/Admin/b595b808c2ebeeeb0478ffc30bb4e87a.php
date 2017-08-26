@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>后台管理~</title>
+    <title>古树监控系统管理后台</title>
     <link href="/AncientTree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
     <link href="/AncientTree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="/AncientTree/Public/Default/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
@@ -42,8 +42,8 @@
                     <li class="nav-header" style="text-align:center;">
                         <div class="dropdown profile-element"> <span>
                         </span>
-                        <span class="clear"> <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold">管理员您好</strong>
-                        </span> <span class="text-muted text-xs block">欢迎回来~~   </span> </span>
+                        <span class="clear"> <span class="block m-t-xs" style = "color:#fff;"> <strong class="font-bold">古树监控系统</strong>
+                        <!-- </span> <span class="text-muted text-xs block">欢迎回来~~   </span> </span> -->
                     </div>
                     <div class="logo-element">
                         里程密
@@ -97,20 +97,20 @@
                             <li><a href="<?php echo U('User/recovery');?>">会员回收站</a></li>
                         </ul>
                     </li>
-                    <li>
+                     <!-- <li>
                         <a href="index.html"><i class="fa fa-bank"></i> <span class="nav-label">主题管理</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="<?php echo U('Theme/index');?>">主题查看</a></li>
                             <li><a href="<?php echo U('Theme/down');?>" onclick="alert('静静等待 暂未开放');return false;">主题下载</a></li>
                         </ul>
-                    </li>
-                    <li>
+                    </li>  -->
+                    <!-- <li>
                         <a href="index.html"><i class="fa fa-bug"></i> <span class="nav-label">插件管理</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="<?php echo U('Plugs/index');?>" onclick="alert('静静等待 暂未开放');return false;">插件浏览</a></li>
                             <li><a href="<?php echo U('Plugs/recovery');?>" onclick="alert('静静等待 暂未开放');return false;">插件下载</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="index.html"><i class="fa fa-key"></i> <span class="nav-label">网站维护</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -145,12 +145,12 @@
                             </form>
                         </div>
                         <ul class="nav navbar-top-links navbar-right">
-                            <li>
+                            <!-- <li>
                                 <span class="m-r-sm text-muted welcome-message">每一个你不满意的现在,都有一个你不努力的曾经.</span>
-                            </li>
-                        <li>欢迎你，<?php echo (session('username')); ?></li>
+                            </li> -->
+                            <li>欢迎你，</li>
                             <li>
-                                <a data-toggle="modal" href="#myModal6">Good Luck</a>
+                                <a data-toggle="modal" href="#myModal6"><?php echo (session('username')); ?></a>
                             </li>
                         </ul>
 
@@ -159,8 +159,8 @@
 
          <!-- end left -->
         <div class="row">
-        <center><h1>程序信息</h1></center>
-        <div class="col-lg-2">
+        <center><h1>古树监控系统管理后台</h1></center>
+                <!-- <div class="col-lg-2">
                     <div class="widget navy-bg p-lg text-center">
                         <div class="m-b-md">
                             <i class="fa fa-shield fa-4x"></i>
@@ -171,7 +171,7 @@
                             <small>信息</small>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-lg-4">
                         <div class="widget-head-color-box navy-bg p-lg text-center">
                             <div class="m-b-md">
@@ -190,7 +190,7 @@
                             <p>爱上网，爱装逼，但是不搞基. <br>欢迎使用里程密开源博客系统，希望我们一起把里程密做的更好</p>
                         </div>
                 </div>
-                <div class="col-lg-2">
+                <!-- <div class="col-lg-2">
                     <div class="widget lazur-bg p-lg text-center">
                         <div class="m-b-md">
                             <i class="fa fa-warning fa-4x"></i>
@@ -201,8 +201,8 @@
                             <small>信息</small>
                         </div>
                     </div>
-                    </div>
-                <div class="col-lg-4">
+                </div> -->
+                <!-- <div class="col-lg-4">
                     <div class="widget lazur-bg p-xl">
                                 <h2>
                                     里程密开源博客系统
@@ -248,7 +248,7 @@
                         </ul>
 
                     </div>
-                </div>
+                </div> -->
 
                 </div>
             <!-- start footer -->

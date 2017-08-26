@@ -15,6 +15,8 @@ class IndexController extends BaseController {
             $this->assign("slidesList",$slidesList);
             $this->assign("slidesLists",$slidesList);
             $this->display();
+
+            
     }
 
 

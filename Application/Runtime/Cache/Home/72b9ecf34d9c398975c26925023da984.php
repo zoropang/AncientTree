@@ -10,10 +10,10 @@
     <title>邀请码与友链-<?php echo ($SiteInfo["title"]); ?></title>
     <meta name = "keywords" content="<?php echo ($SiteInfo["keywords"]); ?>" >
     <meta name = "description" content="<?php echo ($SiteInfo["description"]); ?>" >
-    <link href="/ancienttree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/css/animate.css" rel="stylesheet">
-    <link href="/ancienttree/Public/Default/css/style.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/animate.css" rel="stylesheet">
+    <link href="/AncientTree/Public/Default/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -26,7 +26,7 @@
                 <ul class="nav" id="side-menu">
                     <li class="nav-header" style="text-align:center;">
                         <div class="dropdown profile-element"> <span>
-                        <a href="/ancienttree/index.php">
+                        <a href="/AncientTree/index.php">
                             <img alt="<?php echo ($SiteInfo["name"]); ?>" class="img-circle" src="<?php echo ($SiteInfo["logo"]); ?>" width="80px;"  height="80px;" />
                         </a>
                         </span>
@@ -112,6 +112,7 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
                                 <h4 class="modal-title">登陆中心</h4>
+                                <div class="pull-right"><a href="<?php echo U('Admin/Index/index');?>" target="_blank">进入后台</a></div>
                             </div>
                             <div class="modal-body">
 
@@ -194,7 +195,7 @@
         <h2>首页</h2>
         <ol class="breadcrumb">
             <li>
-                <a href="/ancienttree/index.php">首页</a>
+                <a href="/AncientTree/index.php">首页</a>
             </li>
             <li class="active">
                 <strong>邀请码与友链</strong>
@@ -273,7 +274,7 @@
 
 <!-- 调用脚部文件 -->
       <a href="#0" class="cd-top">↑</a>
-        <div class="footer" style="z-index:9999;">
+        <!-- <div class="footer" style="z-index:9999;">
             <div class="pull-right">
                <a href="<?php echo U('Admin/Index/index');?>" target="_blank">后台登陆</a>&nbsp;&nbsp;<strong>如果你使用本站程序</strong> 请保留友情链接.
             </div>
@@ -281,22 +282,22 @@
                 <strong>Copyright</strong> <a href="http://www.lcm.wang/">里程密</a> &copy; 2014-2016
                 管理员邮箱：<a href = "mailto:<?php echo ($SiteInfo["admin_email"]); ?>"><?php echo ($SiteInfo["admin_email"]); ?></a>&nbsp; &nbsp;统计：<?php echo ($SiteInfo["statistics"]); ?>&nbsp; &nbsp;ICP备案：<?php echo ($SiteInfo["icp"]); ?>
             </div>
-        </div>
+        </div> -->
 
         </div>
         </div>
 
-    <script src="/ancienttree/Public/Default/js/jquery-2.1.1.js"></script>
-    <script src="/ancienttree/Public/Default/js/jquery-ui-1.10.4.min.js"></script>
-    <script src="/ancienttree/Public/Default/js/bootstrap.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/jquery-2.1.1.js"></script>
+    <script src="/AncientTree/Public/Default/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/bootstrap.min.js"></script>
     <!-- 手风琴菜单 -->
-    <script src="/ancienttree/Public/Default/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <!-- 滚动条 -->
-    <script src="/ancienttree/Public/Default/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
     <!-- 导航菜单 -->
-    <script src="/ancienttree/Public/Default/js/inspinia.js"></script>
+    <script src="/AncientTree/Public/Default/js/inspinia.js"></script>
     <!-- 进度条 -->
-    <script src="/ancienttree/Public/Default/js/plugins/pace/pace.min.js"></script>
+    <script src="/AncientTree/Public/Default/js/plugins/pace/pace.min.js"></script>
 
     <script>
         var s_url= "active_<?php echo ($is_active); ?>";
