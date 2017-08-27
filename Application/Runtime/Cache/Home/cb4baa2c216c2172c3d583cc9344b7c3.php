@@ -72,17 +72,18 @@
                             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
                             <form role="search" class="navbar-form-custom" action="<?php echo U('Index/serch');?>" method="post">
                                 <div class="form-group">
-                                    <input type="text" placeholder="搜索框在这里......" class="form-control" name="keywords" id="top-search" required>
+                                    <input type="text" placeholder="输入搜索内容..." class="form-control" name="keywords" id="top-search" required>
                                 </div>
                             </form>
                         </div>
                         <ul class="nav navbar-top-links navbar-right">
                             <li>
-                                <span class="m-r-sm text-muted welcome-message">欢迎来到<?php echo ($SiteInfo["name"]); ?>，有你代码，有你的风格！</span>
+                                <span class="m-r-sm text-muted welcome-message">欢迎来到<?php echo ($SiteInfo["name"]); ?>！</span>
                             </li>
                         <?php if($_SESSION['muser']!= ''): ?><li class="dropdown">
                                 <a class="dropdown-toggle count-info" data-toggle="dropdown" href="javascript:void(0)">
-                                    <i class="fa fa-envelope"></i>  <span class="label label-warning">家</span>
+                                    <i class="fa fa-envelope"></i>  
+                                    <!-- <span class="label label-warning">家</span> -->
                                 </a>
                                 <ul class="dropdown-menu dropdown-messages">
                                     <li>
@@ -103,7 +104,7 @@
                                     <li class="divider"></li>
                                     <li>
                                         <div class="text-center link-block">
-                                                <i class="fa fa-envelope"></i> <strong>里程密和你在一起</strong>
+                                                <i class="fa fa-envelope"></i> <strong>古树监控系统用户管理</strong>
                                         </div>
                                     </li>
                                 </ul>
@@ -247,10 +248,23 @@
                     <div class="ibox-content">
                         <div class="row">                             
                             <div class="col-lg-10">
-                                <h2>古树id:<?php echo ($tid); ?></h2>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <h2>古树id:</h2>
+                                        </td>
+                                        <td>
+                                            <input type="text" id="tree_id" style="width:150px; float:left;margin-left:5px" class="form-control" placeholder="<?php echo ($tid); ?>">    
+                                        </td>
+                                        <td>
+                                            <label style="margin-left:5px" class="btn btn-primary" onclick="search()">搜索</label>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
-                            <input type="text" id="target_appid_user" style="width:150px; float:left;margin-left:5px" class="form-control" placeholder="输入appid">
-					            <label style="margin-left:5px" class="btn btn-primary" onclick="search_detail_info()">搜索</label>
+                            
+                           
+                            
                         </div>
                     </div>
                     <div class="ibox-content">
@@ -311,7 +325,7 @@
 <!-- 正文结束 -->
 
 <div id='chart_param' style="display: none"><?php echo ($chart_param); ?></div>
-
+<div id='c_id' style="display: none"><?php echo ($id); ?></div>
 <!-- 调用脚部文件 -->
       <a href="#0" class="cd-top">↑</a>
         <!-- <div class="footer" style="z-index:9999;">
@@ -391,7 +405,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        reqUrl = "http://localhost/AncientTree/index.php?m=Home&c=GetData&a=init2";
+        reqUrl = "index.php?m=Home&c=GetData&a=init2";
         $.get(reqUrl, function (res, status) {
             var obj = eval ("(" + res + ")");
             //window.alert(obj);
@@ -400,4 +414,15 @@
             draw_chart_2lines('main', param.unit1, obj.data1, param.type_name1, param.unit2, obj.data2, param.type_name2);
         });
     });
+
+
+
+    function search()
+	{
+        var tree_id = document.getElementById("tree_id").value;
+        var c_id = document.getElementById("c_id").innerText;
+        //window.alert(tree_id);
+        var url = "index.php?m=Home&c=Category&a=index&id="+c_id+"&tid="+tree_id;
+        window.location.href=url;
+    }
 </script>

@@ -8,6 +8,7 @@ class CategoryController extends BaseController {
         $fenleiInfo = $m ->where("id ={$id}")->find();
         $this ->assign("fenleiInfo",$fenleiInfo);
         $this->assign("is_active",$fenleiInfo['id']);
+        $this->assign("id",$id);
 
         if($fenleiInfo['type'] == 4 || $fenleiInfo['type'] == 5) //折线图
         {   

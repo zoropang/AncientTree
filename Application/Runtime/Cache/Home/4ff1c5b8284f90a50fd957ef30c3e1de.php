@@ -63,17 +63,18 @@
                             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
                             <form role="search" class="navbar-form-custom" action="<?php echo U('Index/serch');?>" method="post">
                                 <div class="form-group">
-                                    <input type="text" placeholder="搜索框在这里......" class="form-control" name="keywords" id="top-search" required>
+                                    <input type="text" placeholder="输入搜索内容..." class="form-control" name="keywords" id="top-search" required>
                                 </div>
                             </form>
                         </div>
                         <ul class="nav navbar-top-links navbar-right">
                             <li>
-                                <span class="m-r-sm text-muted welcome-message">欢迎来到<?php echo ($SiteInfo["name"]); ?>，有你代码，有你的风格！</span>
+                                <span class="m-r-sm text-muted welcome-message">欢迎来到<?php echo ($SiteInfo["name"]); ?>！</span>
                             </li>
                         <?php if($_SESSION['muser']!= ''): ?><li class="dropdown">
                                 <a class="dropdown-toggle count-info" data-toggle="dropdown" href="javascript:void(0)">
-                                    <i class="fa fa-envelope"></i>  <span class="label label-warning">家</span>
+                                    <i class="fa fa-envelope"></i>  
+                                    <!-- <span class="label label-warning">家</span> -->
                                 </a>
                                 <ul class="dropdown-menu dropdown-messages">
                                     <li>
@@ -94,7 +95,7 @@
                                     <li class="divider"></li>
                                     <li>
                                         <div class="text-center link-block">
-                                                <i class="fa fa-envelope"></i> <strong>里程密和你在一起</strong>
+                                                <i class="fa fa-envelope"></i> <strong>古树监控系统用户管理</strong>
                                         </div>
                                     </li>
                                 </ul>
@@ -205,7 +206,7 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>这里是一个幻灯片~</h5>
+                    <!-- <h5>这里是一个幻灯片~</h5> -->
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
