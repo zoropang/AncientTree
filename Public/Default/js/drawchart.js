@@ -15,6 +15,10 @@ function draw_chart(id, unit, data, type_name)
                 animation: false
             }
         },
+        legend: {
+        data:[type_name],
+        x: 'center'
+        },
         grid: {
                     left:50,
                     right:30
